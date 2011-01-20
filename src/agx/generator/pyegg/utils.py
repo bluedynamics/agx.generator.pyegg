@@ -2,8 +2,8 @@
 # GNU General Public License Version 2
 
 import os
-from agx.io import python
-from agx.io.uml.utils import (
+from node.ext import python
+from node.ext.uml.utils import (
     TaggedValues,
     UNSET,
 )

@@ -2,8 +2,8 @@
 # GNU General Public License Version 2
 
 from agx.core import Scope
-from agx.io.uml.interfaces import IModel
-from agx.io.uml.interfaces import IPackage
+from node.ext.uml.interfaces import IModel
+from node.ext.uml.interfaces import IPackage
 
 class PackageScope(Scope):
     

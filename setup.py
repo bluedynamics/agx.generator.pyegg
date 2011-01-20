@@ -30,9 +30,9 @@ setup(name='agx.generator.pyegg',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'agx.io.template',
-          'agx.io.python',
-          'agx.io.uml',
+          'node.ext.template',
+          'node.ext.python',
+          'node.ext.uml',
           'agx.transform.uml2fs',
       ],
       extras_require = dict(

@@ -3,10 +3,10 @@
 
 from agx.core import TreeSyncPreperator
 from agx.core.util import read_target_node
-from agx.io.uml.interfaces import IClass
-from agx.io.directory.interfaces import IDirectory
-from agx.io.python.interfaces import IModule
-from agx.io.python import Module
+from node.ext.uml.interfaces import IClass
+from node.ext.directory.interfaces import IDirectory
+from node.ext.python.interfaces import IModule
+from node.ext.python import Module
 
 class PackageSyncer(TreeSyncPreperator):
     

@@ -8,21 +8,21 @@ from agx.core import (
     registerScope,
 )
 from agx.core.util import read_target_node
-from agx.io.uml.interfaces import (
+from node.ext.uml.interfaces import (
     IModel,
     IPackage,
     IClass,
     IOperation,
     IProperty,
 )
-from agx.io.uml.utils import (
+from node.ext.uml.utils import (
     TaggedValues,
     UNSET,
 )
-from agx.io.directory.interfaces import IDirectory
-from agx.io.directory import Directory
-from agx.io.template import JinjaTemplate
-from agx.io import python
+from node.ext.directory.interfaces import IDirectory
+from node.ext.directory import Directory
+from node.ext.template import JinjaTemplate
+from node.ext import python
 from agx.generator.pyegg.scope import (
     PackageScope,
     EggScope,

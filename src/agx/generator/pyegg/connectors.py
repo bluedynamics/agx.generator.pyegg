@@ -8,13 +8,13 @@ from agx.core import (
     registerScope,
 )
 from agx.core.util import read_target_node
-from agx.io.uml.interfaces import IGeneralization
-from agx.io.uml.utils import (
+from node.ext.uml.interfaces import IGeneralization
+from node.ext.uml.utils import (
     Inheritance,
     TaggedValues,
     UNSET,
 )
-from agx.io.python.utils import Imports
+from node.ext.python.utils import Imports
 
 def base_name(class_):
     """Extract base name for Class.
