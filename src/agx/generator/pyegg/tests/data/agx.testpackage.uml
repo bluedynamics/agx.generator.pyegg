@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:pyegg="http:///schemas/pyegg/_3wLEMItxEd-VCMTaPn6cow/12" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/pyegg/_3wLEMItxEd-VCMTaPn6cow/12 ../../profiles/pyegg.profile.uml#_3wLrQItxEd-VCMTaPn6cow">
+  <uml:Model xmi:id="_-140MH7wEd-FrYXmSDxOlg" name="agx.testpackage">
+    <packageImport xmi:id="_-140MX7wEd-FrYXmSDxOlg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_BieWQH7xEd-FrYXmSDxOlg" name="agx.testpackage">
+      <packagedElement xmi:type="uml:Package" xmi:id="_OYHmcH8GEd-FrYXmSDxOlg" name="somepackage">
+        <packagedElement xmi:type="uml:Class" xmi:id="_jNgg8H8GEd-FrYXmSDxOlg" name="PackageClass">
+          <generalization xmi:id="_kUPFgId3Ed-UV472qNy5NA" general="_X6eI8Id2Ed-UV472qNy5NA"/>
+          <ownedAttribute xmi:id="_Yw0DIH8HEd-FrYXmSDxOlg" name="attr1" visibility="public" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_h_q_YH8HEd-FrYXmSDxOlg" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_h_qYUH8HEd-FrYXmSDxOlg" value="1"/>
+            <defaultValue xmi:type="uml:LiteralString" xmi:id="_h_rmcH8HEd-FrYXmSDxOlg">
+              <value xsi:nil="true"/>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_sW4DEIdzEd-UV472qNy5NA" name="attr2" visibility="public" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m0HIoId0Ed-UV472qNy5NA" value="1"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_m0GhkId0Ed-UV472qNy5NA" value="1"/>
+            <defaultValue xmi:type="uml:LiteralString" xmi:id="_m0HvsId0Ed-UV472qNy5NA">
+              <value xsi:nil="true"/>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedOperation xmi:id="_i9kLAH8HEd-FrYXmSDxOlg" name="function1"/>
+          <ownedOperation xmi:id="_kzlRcH8HEd-FrYXmSDxOlg" name="function2"/>
+          <ownedOperation xmi:id="_mCAzcH8HEd-FrYXmSDxOlg" name="function3"/>
+          <ownedOperation xmi:id="_jqBcEIhBEd-3SN0KTSCKDw" name="function4"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_UpgE8H8GEd-FrYXmSDxOlg" name="testmodule">
+        <packagedElement xmi:type="uml:Class" xmi:id="_Zz2p8H8GEd-FrYXmSDxOlg" name="ModuleClass"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_dLYmcH8GEd-FrYXmSDxOlg" name="DerivedClass">
+          <generalization xmi:id="_tdlCkH8GEd-FrYXmSDxOlg" general="_Zz2p8H8GEd-FrYXmSDxOlg"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_oIracH8GEd-FrYXmSDxOlg" name="MultiDerivedClass">
+          <generalization xmi:id="_v3Sr8H8GEd-FrYXmSDxOlg" general="_Zz2p8H8GEd-FrYXmSDxOlg"/>
+          <generalization xmi:id="_zBtZgH8GEd-FrYXmSDxOlg" general="_jNgg8H8GEd-FrYXmSDxOlg"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_X6eI8Id2Ed-UV472qNy5NA" name="StubClass"/>
+    <profileApplication xmi:id="_-140Mn7wEd-FrYXmSDxOlg">
+      <eAnnotations xmi:id="_-140M37wEd-FrYXmSDxOlg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/schemas/Standard/1#/"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:id="_FrZTcH7xEd-FrYXmSDxOlg">
+      <eAnnotations xmi:id="_FreL8H7xEd-FrYXmSDxOlg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="../../profiles/pyegg.profile.uml#_3wLrQItxEd-VCMTaPn6cow"/>
+      </eAnnotations>
+      <appliedProfile href="../../profiles/pyegg.profile.uml#_HHBJsNqqEd6cif0axL0c4w"/>
+    </profileApplication>
+  </uml:Model>
+  <pyegg:pyegg xmi:id="_JW0cUH7xEd-FrYXmSDxOlg" base_Package="_BieWQH7xEd-FrYXmSDxOlg" description="I am the description" keywords="a, b, c" author="Max Mustermann" email="max@mustermann.com" url="http://www.mustermann.com" license="GPL" zipsafe="True" classifiers="Framework :: BFG, Topic :: System, Development Status :: 5 - Production/Stable&#xA;" copyright="Copyright BlueDynamics Alliance - http://bluedynamics.com, GNU General Public License Version 2 or later" version="1.1"/>
+  <pyegg:pypackage xmi:id="_UAarsH8GEd-FrYXmSDxOlg" base_Package="_OYHmcH8GEd-FrYXmSDxOlg"/>
+  <pyegg:pymodule xmi:id="_ZM9pEH8GEd-FrYXmSDxOlg" base_Package="_UpgE8H8GEd-FrYXmSDxOlg"/>
+  <pyegg:expression xmi:id="_oxssIIdzEd-UV472qNy5NA" expression="foo and 'foo' or 'not foo'" base_Property="_Yw0DIH8HEd-FrYXmSDxOlg"/>
+  <pyegg:stub xmi:id="_dv_K0Id2Ed-UV472qNy5NA" base_Class="_X6eI8Id2Ed-UV472qNy5NA" import="some.package.containing.stub"/>
+  <pyegg:decorator xmi:id="_lDChsId2Ed-UV472qNy5NA" base_Operation="_i9kLAH8HEd-FrYXmSDxOlg" name="property"/>
+  <pyegg:derive xmi:id="_7zYloId5Ed-UV472qNy5NA" order="0" base_Generalization="_zBtZgH8GEd-FrYXmSDxOlg"/>
+  <pyegg:derive xmi:id="_AIlrUId6Ed-UV472qNy5NA" order="1" base_Generalization="_v3Sr8H8GEd-FrYXmSDxOlg"/>
+  <pyegg:decorator xmi:id="_KmiwgIhBEd-3SN0KTSCKDw" base_Operation="_kzlRcH8HEd-FrYXmSDxOlg" name="mydec" args="foo, bar"/>
+  <pyegg:decorator xmi:id="_m0t2cIhBEd-3SN0KTSCKDw" base_Operation="_mCAzcH8HEd-FrYXmSDxOlg" name="anotherdec" args="arg1, arg2" kwargs="foo=bar, baz=0"/>
+  <pyegg:decorator xmi:id="_t6WDEIhGEd-3SN0KTSCKDw" base_Class="_dLYmcH8GEd-FrYXmSDxOlg" name="classdecorator"/>
+</xmi:XMI>

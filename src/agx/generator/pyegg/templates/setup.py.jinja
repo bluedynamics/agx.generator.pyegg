@@ -1,0 +1,42 @@
+{% for cpline in cp %}# {{cpline}}
+{% endfor %}
+from setuptools import setup, find_packages
+import sys, os
+
+version = "{{version}}"
+shortdesc ="{{description}}"
+longdesc = open(os.path.join(os.path.dirname(__file__), 'README.txt')).read()
+
+setup(name="{{project}}",
+      version=version,
+      description=shortdesc,
+      long_description=longdesc,
+      classifiers=[{% for classifier in classifiers %}
+          "{{classifier}}",{% endfor %}
+      ],
+      keywords="{{keywords}}",
+      author="{{author}}",
+      author_email="{{author_email}}",
+      url="{{url}}",
+      license="{{license_name}}",
+      packages=find_packages("src"),
+      package_dir={"": "src"},
+      namespace_packages=[{{namespace_packages}}],
+      include_package_data=True,
+      zip_safe={{zip_safe}},
+      install_requires=[
+          'setuptools',
+          ##code-section dependencies
+          ##/code-section dependencies
+      ],
+      extras_require = dict(
+          ##code-section extras_require
+          ##/code-section extras_require
+      ),
+      entry_points="""
+      ##code-section entry_points
+      ##/code-section entry_points
+      """,
+      ##code-section additionals
+      ##/code-section additionals
+      )
