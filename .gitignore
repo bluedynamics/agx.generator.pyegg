@@ -1,3 +1,4 @@
 *.pyc
 *.pyo
 src/agx.generator.pyegg.egg-info
+src/agx/generator/pyegg/tests/data/agx.testpackage
