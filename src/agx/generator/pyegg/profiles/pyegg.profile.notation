@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML">
+  <notation:Diagram xmi:id="_7vUMEKfeEeCYbMocf1hIjA" type="PapyrusUMLProfileDiagram" name="pyegg.profile" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_7vUMEafeEeCYbMocf1hIjA"/>
+    <element xmi:type="uml:Profile" href="pyegg.profile.uml#_9RwEoafdEeCYbMocf1hIjA"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_5RzyYKffEeCYbMocf1hIjA" type="PapyrusUMLProfileDiagram" name="pyegg" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_HWNhQKfgEeCYbMocf1hIjA" type="1026" fontName="Ubuntu" fontHeight="12" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HWNhQqfgEeCYbMocf1hIjA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HWNhQ6fgEeCYbMocf1hIjA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HWOIUKfgEeCYbMocf1hIjA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HWOIUafgEeCYbMocf1hIjA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HWOIUqfgEeCYbMocf1hIjA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HWOIU6fgEeCYbMocf1hIjA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_HWOIVKfgEeCYbMocf1hIjA" type="1034"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_HWOIVafgEeCYbMocf1hIjA" type="1071">
+        <children xmi:type="notation:Shape" xmi:id="_oXhmEKfgEeCYbMocf1hIjA" type="3002" fontName="Ubuntu" fontHeight="12" lineColor="0">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_VIWWcdqqEd6cif0axL0c4w"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_oXhmEafgEeCYbMocf1hIjA" x="38" y="79"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_osZp4KfgEeCYbMocf1hIjA" type="3002" fontName="Ubuntu" fontHeight="12" lineColor="0">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_9X3UQBMGEd-xr8iNT7ZQUQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_osZp4afgEeCYbMocf1hIjA" x="33" y="55"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_pVYVcKfgEeCYbMocf1hIjA" type="3002" fontName="Ubuntu" fontHeight="12" lineColor="0">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_-P8LwBMGEd-xr8iNT7ZQUQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_pVYVcafgEeCYbMocf1hIjA" x="19" y="67"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_pnpxMKfgEeCYbMocf1hIjA" type="3002" fontName="Ubuntu" fontHeight="12" lineColor="0">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#__WqjQBMGEd-xr8iNT7ZQUQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_pnpxMafgEeCYbMocf1hIjA" x="28" y="68"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_p51tYKfgEeCYbMocf1hIjA" type="3002" fontName="Ubuntu" fontHeight="12" lineColor="0">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_AQCbQBMHEd-xr8iNT7ZQUQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_p51tYafgEeCYbMocf1hIjA" x="47" y="97"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_qIqzkKfgEeCYbMocf1hIjA" type="3002" fontName="Ubuntu" fontHeight="12" lineColor="0">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_Bf1PMBMHEd-xr8iNT7ZQUQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_qIqzkafgEeCYbMocf1hIjA" x="21" y="125"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_qaHv8KfgEeCYbMocf1hIjA" type="3002" fontName="Ubuntu" fontHeight="12" lineColor="0">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_CktzoBMHEd-xr8iNT7ZQUQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_qaHv8afgEeCYbMocf1hIjA" x="9" y="144"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_qsTFEKfgEeCYbMocf1hIjA" type="3002" fontName="Ubuntu" fontHeight="12" lineColor="0">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_EHJ2wBMHEd-xr8iNT7ZQUQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_qsTFEafgEeCYbMocf1hIjA" x="21" y="149"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_q9058KfgEeCYbMocf1hIjA" type="3002" fontName="Ubuntu" fontHeight="12" lineColor="0">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_s1lvIH7-Ed-FrYXmSDxOlg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_q9058afgEeCYbMocf1hIjA" x="10" y="163"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_rTEKIKfgEeCYbMocf1hIjA" type="3002" fontName="Ubuntu" fontHeight="12" lineColor="0">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_TntesItlEd-VCMTaPn6cow"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_rTEKIafgEeCYbMocf1hIjA" x="29" y="176"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_rpY_cKfgEeCYbMocf1hIjA" type="3002" fontName="Ubuntu" fontHeight="12" lineColor="0">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_0FHHsItxEd-VCMTaPn6cow"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_rpY_cafgEeCYbMocf1hIjA" x="37" y="202"/>
+        </children>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_HWOIVqfgEeCYbMocf1hIjA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_HWOIV6fgEeCYbMocf1hIjA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HWOIWKfgEeCYbMocf1hIjA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_HWOIWafgEeCYbMocf1hIjA" type="1019">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_HWOIWqfgEeCYbMocf1hIjA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_HWOIW6fgEeCYbMocf1hIjA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HWOIXKfgEeCYbMocf1hIjA"/>
+      </children>
+      <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_OjmQANqqEd6cif0axL0c4w"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HWNhQafgEeCYbMocf1hIjA" x="10" y="255" width="161" height="291"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_I2SM4KfgEeCYbMocf1hIjA" type="1030" fontName="Ubuntu" fontHeight="12" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_I2Sz8KfgEeCYbMocf1hIjA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_I2Sz8afgEeCYbMocf1hIjA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_I2Sz8qfgEeCYbMocf1hIjA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_I2Sz86fgEeCYbMocf1hIjA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_I2Sz9KfgEeCYbMocf1hIjA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_I2Sz9afgEeCYbMocf1hIjA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_I2Sz9qfgEeCYbMocf1hIjA" type="1047"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_I2Sz96fgEeCYbMocf1hIjA" type="1042">
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I2Sz-KfgEeCYbMocf1hIjA"/>
+      </children>
+      <element xmi:type="uml:Profile" href="pyegg.profile.uml#_HHBJsNqqEd6cif0axL0c4w"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I2SM4afgEeCYbMocf1hIjA" x="10" y="10" width="124" height="114"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_PF2GcKfgEeCYbMocf1hIjA" type="1026" fontName="Ubuntu" fontHeight="12" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PF2tgKfgEeCYbMocf1hIjA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PF2tgafgEeCYbMocf1hIjA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PF2tgqfgEeCYbMocf1hIjA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PF2tg6fgEeCYbMocf1hIjA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PF2thKfgEeCYbMocf1hIjA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PF2thafgEeCYbMocf1hIjA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_PF2thqfgEeCYbMocf1hIjA" type="1034"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_PF2th6fgEeCYbMocf1hIjA" type="1071">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_PF2tiKfgEeCYbMocf1hIjA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_PF2tiafgEeCYbMocf1hIjA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PF2tiqfgEeCYbMocf1hIjA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_PF2ti6fgEeCYbMocf1hIjA" type="1019">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_PF2tjKfgEeCYbMocf1hIjA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_PF2tjafgEeCYbMocf1hIjA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PF2tjqfgEeCYbMocf1hIjA"/>
+      </children>
+      <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_R1oogNqqEd6cif0axL0c4w"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PF2GcafgEeCYbMocf1hIjA" x="180" y="255" width="126" height="106"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_PeGOYKfgEeCYbMocf1hIjA" type="1026" fontName="Ubuntu" fontHeight="12" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PeG1cKfgEeCYbMocf1hIjA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PeG1cafgEeCYbMocf1hIjA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PeG1cqfgEeCYbMocf1hIjA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PeG1c6fgEeCYbMocf1hIjA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_PeG1dKfgEeCYbMocf1hIjA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PeG1dafgEeCYbMocf1hIjA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_PeG1dqfgEeCYbMocf1hIjA" type="1034"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_PeG1d6fgEeCYbMocf1hIjA" type="1071">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_PeG1eKfgEeCYbMocf1hIjA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_PeG1eafgEeCYbMocf1hIjA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PeG1eqfgEeCYbMocf1hIjA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_PeHcgKfgEeCYbMocf1hIjA" type="1019">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_PeHcgafgEeCYbMocf1hIjA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_PeHcgqfgEeCYbMocf1hIjA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PeHcg6fgEeCYbMocf1hIjA"/>
+      </children>
+      <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_TM1sANqqEd6cif0axL0c4w"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PeGOYafgEeCYbMocf1hIjA" x="315" y="255" width="141"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Qjcs4KfgEeCYbMocf1hIjA" type="1026" fontName="Ubuntu" fontHeight="12" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QjdT8KfgEeCYbMocf1hIjA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QjdT8afgEeCYbMocf1hIjA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QjdT8qfgEeCYbMocf1hIjA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QjdT86fgEeCYbMocf1hIjA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QjdT9KfgEeCYbMocf1hIjA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QjdT9afgEeCYbMocf1hIjA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_QjdT9qfgEeCYbMocf1hIjA" type="1034"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_QjdT96fgEeCYbMocf1hIjA" type="1071">
+        <children xmi:type="notation:Shape" xmi:id="_xYID4KfgEeCYbMocf1hIjA" type="3002" fontName="Ubuntu" fontHeight="12" lineColor="0">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_e9ikYBDYEd-S66cbs9vitw"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_xYID4afgEeCYbMocf1hIjA" x="23" y="29"/>
+        </children>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_QjdT-KfgEeCYbMocf1hIjA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_QjdT-afgEeCYbMocf1hIjA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QjdT-qfgEeCYbMocf1hIjA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_QjdT-6fgEeCYbMocf1hIjA" type="1019">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_QjdT_KfgEeCYbMocf1hIjA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_QjdT_afgEeCYbMocf1hIjA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QjdT_qfgEeCYbMocf1hIjA"/>
+      </children>
+      <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_cufvYBDXEd-S66cbs9vitw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Qjcs4afgEeCYbMocf1hIjA" x="465" y="255" width="146" height="106"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_RALsMKfgEeCYbMocf1hIjA" type="1026" fontName="Ubuntu" fontHeight="12" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RALsMqfgEeCYbMocf1hIjA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RAMTQKfgEeCYbMocf1hIjA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RAMTQafgEeCYbMocf1hIjA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RAMTQqfgEeCYbMocf1hIjA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RAMTQ6fgEeCYbMocf1hIjA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RAMTRKfgEeCYbMocf1hIjA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_RAMTRafgEeCYbMocf1hIjA" type="1034"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_RAMTRqfgEeCYbMocf1hIjA" type="1071">
+        <children xmi:type="notation:Shape" xmi:id="_23UQcKfgEeCYbMocf1hIjA" type="3002" fontName="Ubuntu" fontHeight="12" lineColor="0">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_w1zakId1Ed-UV472qNy5NA"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_23UQcafgEeCYbMocf1hIjA" x="22" y="10"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_3Ryl8KfgEeCYbMocf1hIjA" type="3002" fontName="Ubuntu" fontHeight="12" lineColor="0">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_zAE5wId1Ed-UV472qNy5NA"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_3Ryl8afgEeCYbMocf1hIjA" x="19" y="26"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_3rZ_0KfgEeCYbMocf1hIjA" type="3002" fontName="Ubuntu" fontHeight="12" lineColor="0">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_1OstcId1Ed-UV472qNy5NA"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_3rZ_0afgEeCYbMocf1hIjA" x="30" y="45"/>
+        </children>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_RAMTR6fgEeCYbMocf1hIjA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_RAMTSKfgEeCYbMocf1hIjA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RAMTSafgEeCYbMocf1hIjA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_RAMTSqfgEeCYbMocf1hIjA" type="1019">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_RAMTS6fgEeCYbMocf1hIjA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_RAMTTKfgEeCYbMocf1hIjA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RAMTTafgEeCYbMocf1hIjA"/>
+      </children>
+      <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_sOrecId1Ed-UV472qNy5NA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RALsMafgEeCYbMocf1hIjA" x="620" y="255" width="161" height="131"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_SNiQIKfgEeCYbMocf1hIjA" type="1026" fontName="Ubuntu" fontHeight="12" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SNiQIqfgEeCYbMocf1hIjA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SNiQI6fgEeCYbMocf1hIjA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SNiQJKfgEeCYbMocf1hIjA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SNi3MKfgEeCYbMocf1hIjA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SNi3MafgEeCYbMocf1hIjA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SNi3MqfgEeCYbMocf1hIjA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_SNi3M6fgEeCYbMocf1hIjA" type="1034"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_SNi3NKfgEeCYbMocf1hIjA" type="1071">
+        <children xmi:type="notation:Shape" xmi:id="_ECvv8KfhEeCYbMocf1hIjA" type="3002" fontName="Ubuntu" fontHeight="12" lineColor="0">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_egTxQBMGEd-xr8iNT7ZQUQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_ECvv8afhEeCYbMocf1hIjA" x="23" y="13"/>
+        </children>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_SNi3NafgEeCYbMocf1hIjA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_SNi3NqfgEeCYbMocf1hIjA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SNi3N6fgEeCYbMocf1hIjA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_SNi3OKfgEeCYbMocf1hIjA" type="1019">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_SNi3OafgEeCYbMocf1hIjA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_SNi3OqfgEeCYbMocf1hIjA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SNi3O6fgEeCYbMocf1hIjA"/>
+      </children>
+      <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_J1wNwBMGEd-xr8iNT7ZQUQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SNiQIafgEeCYbMocf1hIjA" x="790" y="255"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_SoXyAKfgEeCYbMocf1hIjA" type="1026" fontName="Ubuntu" fontHeight="12" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SoXyAqfgEeCYbMocf1hIjA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SoXyA6fgEeCYbMocf1hIjA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SoXyBKfgEeCYbMocf1hIjA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SoXyBafgEeCYbMocf1hIjA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SoYZEKfgEeCYbMocf1hIjA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_SoYZEafgEeCYbMocf1hIjA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_SoYZEqfgEeCYbMocf1hIjA" type="1034"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_SoYZE6fgEeCYbMocf1hIjA" type="1071">
+        <children xmi:type="notation:Shape" xmi:id="_Fv_78KfhEeCYbMocf1hIjA" type="3002" fontName="Ubuntu" fontHeight="12" lineColor="0">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_P5bAcIdyEd-UV472qNy5NA"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_Fv_78afhEeCYbMocf1hIjA" x="31" y="25"/>
+        </children>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_SoYZFKfgEeCYbMocf1hIjA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_SoYZFafgEeCYbMocf1hIjA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SoYZFqfgEeCYbMocf1hIjA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_SoYZF6fgEeCYbMocf1hIjA" type="1019">
+        <styles xmi:type="notation:SortingStyle" xmi:id="_SoYZGKfgEeCYbMocf1hIjA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_SoYZGafgEeCYbMocf1hIjA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SoYZGqfgEeCYbMocf1hIjA"/>
+      </children>
+      <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_Oh_6gIdyEd-UV472qNy5NA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SoXyAafgEeCYbMocf1hIjA" x="940" y="255" width="151" height="146"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_VwRhoKfhEeCYbMocf1hIjA" type="1031" fontName="Ubuntu" fontHeight="12" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwSIsKfhEeCYbMocf1hIjA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwSIsafhEeCYbMocf1hIjA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwSIsqfhEeCYbMocf1hIjA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwSIs6fhEeCYbMocf1hIjA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwSItKfhEeCYbMocf1hIjA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwSItafhEeCYbMocf1hIjA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwSvwafhEeCYbMocf1hIjA" source="Stereotype_Annotation">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwSvwqfhEeCYbMocf1hIjA" key="StereotypeWithQualifiedNameList" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwSvw6fhEeCYbMocf1hIjA" key="StereotypeList" value="Standard::Metaclass"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwSvxKfhEeCYbMocf1hIjA" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwSvxafhEeCYbMocf1hIjA" key="PropStereoDisplay" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwSvxqfhEeCYbMocf1hIjA" key="StereotypePropertyLocation" value="Compartment"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_VwSItqfhEeCYbMocf1hIjA" type="1084"/>
+      <element xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VwSvwKfhEeCYbMocf1hIjA" x="10" y="165" width="446"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_VwTW0KfhEeCYbMocf1hIjA" type="1031" fontName="Ubuntu" fontHeight="12" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwTW0qfhEeCYbMocf1hIjA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwTW06fhEeCYbMocf1hIjA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwTW1KfhEeCYbMocf1hIjA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwTW1afhEeCYbMocf1hIjA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwTW1qfhEeCYbMocf1hIjA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwT94KfhEeCYbMocf1hIjA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwT946fhEeCYbMocf1hIjA" source="Stereotype_Annotation">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwT95KfhEeCYbMocf1hIjA" key="StereotypeWithQualifiedNameList" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwT95afhEeCYbMocf1hIjA" key="StereotypeList" value="Standard::Metaclass"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwT95qfhEeCYbMocf1hIjA" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwT956fhEeCYbMocf1hIjA" key="PropStereoDisplay" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwT96KfhEeCYbMocf1hIjA" key="StereotypePropertyLocation" value="Compartment"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_VwT94afhEeCYbMocf1hIjA" type="1084"/>
+      <element xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VwT94qfhEeCYbMocf1hIjA" x="490" y="165"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_VwT96afhEeCYbMocf1hIjA" type="1031" fontName="Ubuntu" fontHeight="12" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwUk8KfhEeCYbMocf1hIjA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwUk8afhEeCYbMocf1hIjA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwUk8qfhEeCYbMocf1hIjA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwUk86fhEeCYbMocf1hIjA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwUk9KfhEeCYbMocf1hIjA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwUk9afhEeCYbMocf1hIjA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwUk-KfhEeCYbMocf1hIjA" source="Stereotype_Annotation">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwUk-afhEeCYbMocf1hIjA" key="StereotypeWithQualifiedNameList" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwUk-qfhEeCYbMocf1hIjA" key="StereotypeList" value="Standard::Metaclass"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwUk-6fhEeCYbMocf1hIjA" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwUk_KfhEeCYbMocf1hIjA" key="PropStereoDisplay" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwUk_afhEeCYbMocf1hIjA" key="StereotypePropertyLocation" value="Compartment"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_VwUk9qfhEeCYbMocf1hIjA" type="1084"/>
+      <element xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Operation"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VwUk96fhEeCYbMocf1hIjA" x="650" y="165"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_VwVMAKfhEeCYbMocf1hIjA" type="1031" fontName="Ubuntu" fontHeight="12" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwVMAqfhEeCYbMocf1hIjA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwVMA6fhEeCYbMocf1hIjA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwVMBKfhEeCYbMocf1hIjA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwVMBafhEeCYbMocf1hIjA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwVMBqfhEeCYbMocf1hIjA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwVMB6fhEeCYbMocf1hIjA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwVzEqfhEeCYbMocf1hIjA" source="Stereotype_Annotation">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwVzE6fhEeCYbMocf1hIjA" key="StereotypeWithQualifiedNameList" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwVzFKfhEeCYbMocf1hIjA" key="StereotypeList" value="Standard::Metaclass"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwVzFafhEeCYbMocf1hIjA" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwVzFqfhEeCYbMocf1hIjA" key="PropStereoDisplay" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwVzF6fhEeCYbMocf1hIjA" key="StereotypePropertyLocation" value="Compartment"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_VwVzEKfhEeCYbMocf1hIjA" type="1084"/>
+      <element xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Generalization"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VwVzEafhEeCYbMocf1hIjA" x="810" y="165"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_VwVzGKfhEeCYbMocf1hIjA" type="1031" fontName="Ubuntu" fontHeight="12" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwWaIKfhEeCYbMocf1hIjA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwWaIafhEeCYbMocf1hIjA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwWaIqfhEeCYbMocf1hIjA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwWaI6fhEeCYbMocf1hIjA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwWaJKfhEeCYbMocf1hIjA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwWaJafhEeCYbMocf1hIjA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwWaKKfhEeCYbMocf1hIjA" source="Stereotype_Annotation">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwWaKafhEeCYbMocf1hIjA" key="StereotypeWithQualifiedNameList" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwWaKqfhEeCYbMocf1hIjA" key="StereotypeList" value="Standard::Metaclass"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwWaK6fhEeCYbMocf1hIjA" key="Stereotype_Presentation_Kind" value="HorizontalStereo"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwWaLKfhEeCYbMocf1hIjA" key="PropStereoDisplay" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_VwXBMKfhEeCYbMocf1hIjA" key="StereotypePropertyLocation" value="Compartment"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_VwWaJqfhEeCYbMocf1hIjA" type="1084"/>
+      <element xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VwWaJ6fhEeCYbMocf1hIjA" x="965" y="165"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_5RzyYaffEeCYbMocf1hIjA"/>
+    <element xmi:type="uml:Profile" href="pyegg.profile.uml#_HHBJsNqqEd6cif0axL0c4w"/>
+    <edges xmi:type="notation:Connector" xmi:id="_cltIYKfhEeCYbMocf1hIjA" type="1013" source="_HWNhQKfgEeCYbMocf1hIjA" target="_VwRhoKfhEeCYbMocf1hIjA" lineColor="0">
+      <styles xmi:type="notation:FontStyle" xmi:id="_cltIYafhEeCYbMocf1hIjA" fontName="Ubuntu" fontHeight="12"/>
+      <element xmi:type="uml:Extension" href="pyegg.profile.uml#_VIVIUNqqEd6cif0axL0c4w"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cltIYqfhEeCYbMocf1hIjA" points="[5, -6, -64, 65]$[44, -46, -25, 25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gXafcKfhEeCYbMocf1hIjA" id="(0.9565217391304348,0.020618556701030927)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_c8mlcKfhEeCYbMocf1hIjA" type="1013" source="_PF2GcKfgEeCYbMocf1hIjA" target="_VwRhoKfhEeCYbMocf1hIjA" lineColor="0">
+      <styles xmi:type="notation:FontStyle" xmi:id="_c8mlcafhEeCYbMocf1hIjA" fontName="Ubuntu" fontHeight="12"/>
+      <element xmi:type="uml:Extension" href="pyegg.profile.uml#_VbeGwNqqEd6cif0axL0c4w"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_c8mlcqfhEeCYbMocf1hIjA" points="[-5, -53, 5, 65]$[-8, -93, 2, 25]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_dQqw8KfhEeCYbMocf1hIjA" type="1013" source="_PeGOYKfgEeCYbMocf1hIjA" target="_VwRhoKfhEeCYbMocf1hIjA" lineColor="0">
+      <styles xmi:type="notation:FontStyle" xmi:id="_dQqw8afhEeCYbMocf1hIjA" fontName="Ubuntu" fontHeight="12"/>
+      <element xmi:type="uml:Extension" href="pyegg.profile.uml#_VwAMUNqqEd6cif0axL0c4w"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dQqw8qfhEeCYbMocf1hIjA" points="[-68, -52, 84, 65]$[-120, -92, 32, 25]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_dqOgcKfhEeCYbMocf1hIjA" type="1013" source="_Qjcs4KfgEeCYbMocf1hIjA" target="_VwTW0KfhEeCYbMocf1hIjA" lineColor="0">
+      <styles xmi:type="notation:FontStyle" xmi:id="_dqOgcafhEeCYbMocf1hIjA" fontName="Ubuntu" fontHeight="12"/>
+      <element xmi:type="uml:Extension" href="pyegg.profile.uml#_gvFP8BDXEd-S66cbs9vitw"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dqOgcqfhEeCYbMocf1hIjA" points="[-3, -53, 0, 70]$[0, -98, 3, 25]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_eAu78KfhEeCYbMocf1hIjA" type="1013" source="_SNiQIKfgEeCYbMocf1hIjA" target="_VwVMAKfhEeCYbMocf1hIjA" lineColor="0">
+      <styles xmi:type="notation:FontStyle" xmi:id="_eAu78afhEeCYbMocf1hIjA" fontName="Ubuntu" fontHeight="12"/>
+      <element xmi:type="uml:Extension" href="pyegg.profile.uml#_fxVUQBMGEd-xr8iNT7ZQUQ"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_eAu78qfhEeCYbMocf1hIjA" points="[2, -57, 0, 70]$[0, -102, -2, 25]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_ea028KfhEeCYbMocf1hIjA" type="1013" source="_SoXyAKfgEeCYbMocf1hIjA" target="_VwVzGKfhEeCYbMocf1hIjA" lineColor="0">
+      <styles xmi:type="notation:FontStyle" xmi:id="_ea028afhEeCYbMocf1hIjA" fontName="Ubuntu" fontHeight="12"/>
+      <element xmi:type="uml:Extension" href="pyegg.profile.uml#_UF1WgIdyEd-UV472qNy5NA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ea028qfhEeCYbMocf1hIjA" points="[5, -73, 0, 70]$[0, -118, -5, 25]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_e4TdIKfhEeCYbMocf1hIjA" type="1013" source="_RALsMKfgEeCYbMocf1hIjA" target="_VwT96afhEeCYbMocf1hIjA" lineColor="0">
+      <styles xmi:type="notation:FontStyle" xmi:id="_e4UEMKfhEeCYbMocf1hIjA" fontName="Ubuntu" fontHeight="12"/>
+      <element xmi:type="uml:Extension" href="pyegg.profile.uml#_u2AGAId1Ed-UV472qNy5NA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_e4UEMafhEeCYbMocf1hIjA" points="[0, -65, 0, 70]$[0, -110, 0, 25]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_fQTtcKfhEeCYbMocf1hIjA" type="1013" source="_RALsMKfgEeCYbMocf1hIjA" target="_VwTW0KfhEeCYbMocf1hIjA" lineColor="0">
+      <styles xmi:type="notation:FontStyle" xmi:id="_fQTtcafhEeCYbMocf1hIjA" fontName="Ubuntu" fontHeight="12"/>
+      <element xmi:type="uml:Extension" href="pyegg.profile.uml#_voqSAId1Ed-UV472qNy5NA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fQTtcqfhEeCYbMocf1hIjA" points="[-80, -66, 85, 69]$[-135, -110, 30, 25]"/>
+    </edges>
+  </notation:Diagram>
+</xmi:XMI>
