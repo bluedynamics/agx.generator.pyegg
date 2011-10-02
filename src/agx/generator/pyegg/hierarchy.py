@@ -23,6 +23,7 @@ from node.ext.directory.interfaces import IDirectory
 from node.ext.directory import Directory
 from node.ext.template import JinjaTemplate
 from node.ext import python
+
 from agx.generator.pyegg.scope import (
     PackageScope,
     EggScope,
@@ -138,6 +139,7 @@ registerScope('pyclass', 'uml2fs', [IClass], Scope)
 def pyclass(self, source, target):
     """Create python classes.
     """
+#    import pdb;pdb.set_trace()
     if source.stereotype('pyegg:stub') is not None:
         return
     name = source.name

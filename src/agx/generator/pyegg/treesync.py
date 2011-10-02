@@ -3,7 +3,7 @@
 
 from agx.core import TreeSyncPreperator
 from agx.core.util import read_target_node
-from node.ext.uml.interfaces import IClass
+from node.ext.uml.interfaces import IClass,IInterface
 from node.ext.directory.interfaces import IDirectory
 from node.ext.python.interfaces import IModule
 from node.ext.python import Module
@@ -12,14 +12,14 @@ class PackageSyncer(TreeSyncPreperator):
     
     def __call__(self, source):
         super(PackageSyncer, self).__call__(source)
-        if IClass.providedBy(source) \
+        if (IClass.providedBy(source) or IInterface.providedBy(source)) \
           and IDirectory.providedBy(self.anchor) \
           and (source.__parent__.stereotype('pyegg:pypackage') is not None \
           or source.__parent__.stereotype('pyegg:pyegg') is not None):
             modulename = '%s.py' % source.name.lower()
             self.anchor[modulename] = Module()
             self.anchor = self.anchor[modulename]
-        elif IClass.providedBy(source) \
+        elif (IClass.providedBy(source)  or IInterface.providedBy(source)) \
           and IModule.providedBy(self.anchor) \
           and (source.__parent__.stereotype('pyegg:pypackage') is not None \
           or source.__parent__.stereotype('pyegg:pyegg') is not None):
