@@ -8,7 +8,7 @@ from agx.core import (
 )
 from agx.core.util import read_target_node
 
-@handler('inheritanceorder', 'uml2fs', 'sematicsgenerator', 'pyclass')
+@handler('inheritanceorder', 'uml2fs', 'semanticsgenerator', 'pyclass')
 def inheritanceorder(self, source, target):
     """Fix inheritance order.
     """

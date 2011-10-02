@@ -26,7 +26,7 @@
   />
   
   <agx:generator
-    name="sematicsgenerator"
+    name="semanticsgenerator"
     transform="uml2fs"
     depends="connectorgenerator"
 	description="Generator for code sematics."
