@@ -24,7 +24,7 @@ Setup configuration and emulate main routine.
     >>> target
     <node.ext.directory.directory.Directory object at ...>
     
-    >>> target.printtree()
+    >> target.printtree()
     <class 'node.ext.directory.directory.Directory'>: .../src/agx/generator/pyegg/tests/data/agx.testpackage
       <class 'node.ext.directory.directory.Directory'>: src
         <class 'node.ext.directory.directory.Directory'>: agx
