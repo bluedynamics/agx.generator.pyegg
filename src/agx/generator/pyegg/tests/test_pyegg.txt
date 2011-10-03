@@ -25,35 +25,44 @@ Setup configuration and emulate main routine.
     <node.ext.directory.directory.Directory object at ...>
     
     >>> target.printtree()
-    <class 'node.ext.directory.directory.Directory'>: .../src/agx/generator/pyegg/tests/data/agx.testpackage
+    <class 'node.ext.directory.directory.Directory'>: .../agx.testpackage
       <class 'node.ext.directory.directory.Directory'>: src
         <class 'node.ext.directory.directory.Directory'>: agx
-          <class 'node.ext.python.nodes.Module'>: [?:?] - -1
-            <class 'node.ext.python.nodes.Block'>: [?:?] - 0
+          <class 'node.ext.python.nodes.Module'>: [1:2] - -1
+            <class 'node.ext.python.nodes.Block'>: [2:2] - 0
           <class 'node.ext.directory.directory.Directory'>: testpackage
-            <class 'node.ext.python.nodes.Module'>: [?:?] - -1
-              <class 'node.ext.python.nodes.Block'>: [?:?] - 0
+            <class 'node.ext.python.nodes.Module'>: [1:3] - -1
+              <class 'node.ext.python.nodes.Block'>: [2:3] - 0
             <class 'node.ext.directory.directory.Directory'>: somepackage
-              <class 'node.ext.python.nodes.Module'>: [?:?] - -1
-                <class 'node.ext.python.nodes.Block'>: [?:?] - 0
-              <class 'node.ext.python.nodes.Module'>: [?:?] - -1
-                <class 'node.ext.python.nodes.Block'>: [?:?] - 0
-                <class 'node.ext.python.nodes.Import'>: [?:?] - 0
-                <class 'node.ext.python.nodes.Class'>: [?:?] - 0
-                  <class 'node.ext.python.nodes.Attribute'>: [?:?] - 1
-                  <class 'node.ext.python.nodes.Attribute'>: [?:?] - 1
-                  <class 'node.ext.python.nodes.Function'>: [?:?] - 1
-                    <class 'node.ext.python.nodes.Decorator'>: [?:?] - 1
-                  <class 'node.ext.python.nodes.Function'>: [?:?] - 1
-                    <class 'node.ext.python.nodes.Decorator'>: [?:?] - 1
-                  <class 'node.ext.python.nodes.Function'>: [?:?] - 1
-                    <class 'node.ext.python.nodes.Decorator'>: [?:?] - 1
-                  <class 'node.ext.python.nodes.Function'>: [?:?] - 1
-            <class 'node.ext.python.nodes.Module'>: [?:?] - -1
-              <class 'node.ext.python.nodes.Block'>: [?:?] - 0
-              <class 'node.ext.python.nodes.Import'>: [?:?] - 0
-              <class 'node.ext.python.nodes.Class'>: [?:?] - 0
-              <class 'node.ext.python.nodes.Class'>: [?:?] - 0
+              <class 'node.ext.python.nodes.Module'>: [1:3] - -1
+                <class 'node.ext.python.nodes.Block'>: [2:3] - 0
+              <class 'node.ext.python.nodes.Module'>: [1:25] - -1
+                <class 'node.ext.python.nodes.Block'>: [2:3] - 0
+                <class 'node.ext.python.nodes.Import'>: [5:5] - 0
+                <class 'node.ext.python.nodes.Class'>: [7:25] - 0
+                  <class 'node.ext.python.nodes.Attribute'>: [9:9] - 1
+                  <class 'node.ext.python.nodes.Attribute'>: [10:10] - 1
+                  <class 'node.ext.python.nodes.Function'>: [13:14] - 1
+                    <class 'node.ext.python.nodes.Decorator'>: [12:12] - 1
+                    <class 'node.ext.python.nodes.Block'>: [14:14] - 2
+                  <class 'node.ext.python.nodes.Function'>: [17:18] - 1
+                    <class 'node.ext.python.nodes.Decorator'>: [16:16] - 1
+                    <class 'node.ext.python.nodes.Block'>: [18:18] - 2
+                  <class 'node.ext.python.nodes.Function'>: [21:22] - 1
+                    <class 'node.ext.python.nodes.Decorator'>: [20:20] - 1
+                    <class 'node.ext.python.nodes.Block'>: [22:22] - 2
+                  <class 'node.ext.python.nodes.Function'>: [24:25] - 1
+                    <class 'node.ext.python.nodes.Block'>: [25:25] - 2
+            <class 'node.ext.python.nodes.Module'>: [1:18] - -1
+              <class 'node.ext.python.nodes.Block'>: [2:3] - 0
+              <class 'node.ext.python.nodes.Import'>: [5:5] - 0
+              <class 'node.ext.python.nodes.Class'>: [7:8] - 0
+                <class 'node.ext.python.nodes.Block'>: [8:8] - 1
+              <class 'node.ext.python.nodes.Class'>: [10:11] - 0
+                <class 'node.ext.python.nodes.Block'>: [11:11] - 1
+              <class 'node.ext.python.nodes.Class'>: [13:14] - 0
+                <class 'node.ext.python.nodes.Block'>: [14:14] - 1
+              <class 'node.ext.python.nodes.Class'>: [16:18] - 0
+                <class 'node.ext.python.nodes.Block'>: [18:18] - 1
                 <class 'node.ext.python.nodes.Decorator'>: [?:?] - 0
-              <class 'node.ext.python.nodes.Class'>: [?:?] - 0
       <class 'node.ext.template._api.JinjaTemplate'>: setup.py

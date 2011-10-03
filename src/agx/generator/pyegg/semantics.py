@@ -7,6 +7,8 @@ from agx.core import (
     token,
 )
 from agx.core.util import read_target_node
+from node.ext import python
+from node.ext.python.interfaces import IClass
 
 @handler('inheritanceorder', 'uml2fs', 'semanticsgenerator', 'pyclass')
 def inheritanceorder(self, source, target):
@@ -28,3 +30,36 @@ def inheritanceorder(self, source, target):
         target.bases = bases
     except ComponentLookupError, e:
         pass
+    
+def cmp(a,b):
+    if b.classname in a.bases:
+        res= 1
+    elif a.classname in b.bases:
+        res= -1
+    else:
+        res= 0
+        
+    return res
+    
+def bubblesort(arr,cmp):
+    for j in range(len(arr)):
+        for i in range(j,len(arr)):
+            if cmp(arr[i],arr[j])<0:
+                tmp=arr[j]
+                arr[j]=arr[i]
+                arr[i]=tmp
+
+@handler('inheritancesorter', 'uml2fs', 'semanticsgenerator', 'pymodule', order=90)
+def inheritancesorter(self, source, target):
+    """Create python modules.
+    """
+    module = read_target_node(source,target.target)
+    classes=module.filteredvalues(IClass)
+    for cl in classes:
+        module.detach(cl.__name__)
+        
+    bubblesort(classes,cmp)
+    
+    for cl in classes:
+        module.insertlast(cl)
+

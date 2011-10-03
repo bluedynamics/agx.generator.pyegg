@@ -34,11 +34,13 @@
         <packagedElement xmi:type="uml:Class" xmi:id="_Zz2p8H8GEd-FrYXmSDxOlg" name="ModuleClass"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_dLYmcH8GEd-FrYXmSDxOlg" name="DerivedClass">
           <generalization xmi:id="_tdlCkH8GEd-FrYXmSDxOlg" general="_Zz2p8H8GEd-FrYXmSDxOlg"/>
+          <generalization xmi:id="_sGp0MO3yEeCvpoSe_joWQA" general="_PCT7QO3yEeCvpoSe_joWQA"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_oIracH8GEd-FrYXmSDxOlg" name="MultiDerivedClass">
           <generalization xmi:id="_v3Sr8H8GEd-FrYXmSDxOlg" general="_Zz2p8H8GEd-FrYXmSDxOlg"/>
           <generalization xmi:id="_zBtZgH8GEd-FrYXmSDxOlg" general="_jNgg8H8GEd-FrYXmSDxOlg"/>
         </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_PCT7QO3yEeCvpoSe_joWQA" name="LaterBaseClass"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_X6eI8Id2Ed-UV472qNy5NA" name="StubClass"/>
