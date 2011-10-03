@@ -115,6 +115,9 @@ registerScope('pypackage', 'uml2fs', None, PackageScope)
 def pypackage(self, source, target):
     """Create python packages.
     """
+    if not len(target.anchor):
+        raise Exception(u"Invalid egg structure. Is ``pyegg`` stereotype "
+                        u"applied on root package in UML model?")
     package = target.anchor[source.name]
     module = python.Module()
     package['__init__.py'] = module
