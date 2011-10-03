@@ -23,3 +23,37 @@ Setup configuration and emulate main routine.
     >>> target = controller(modelpaths, outdir)
     >>> target
     <node.ext.directory.directory.Directory object at ...>
+    
+    >>> target.printtree()
+    <class 'node.ext.directory.directory.Directory'>: .../src/agx/generator/pyegg/tests/data/agx.testpackage
+      <class 'node.ext.directory.directory.Directory'>: src
+        <class 'node.ext.directory.directory.Directory'>: agx
+          <class 'node.ext.python.nodes.Module'>: [?:?] - -1
+            <class 'node.ext.python.nodes.Block'>: [?:?] - 0
+          <class 'node.ext.directory.directory.Directory'>: testpackage
+            <class 'node.ext.python.nodes.Module'>: [?:?] - -1
+              <class 'node.ext.python.nodes.Block'>: [?:?] - 0
+            <class 'node.ext.directory.directory.Directory'>: somepackage
+              <class 'node.ext.python.nodes.Module'>: [?:?] - -1
+                <class 'node.ext.python.nodes.Block'>: [?:?] - 0
+              <class 'node.ext.python.nodes.Module'>: [?:?] - -1
+                <class 'node.ext.python.nodes.Block'>: [?:?] - 0
+                <class 'node.ext.python.nodes.Import'>: [?:?] - 0
+                <class 'node.ext.python.nodes.Class'>: [?:?] - 0
+                  <class 'node.ext.python.nodes.Attribute'>: [?:?] - 1
+                  <class 'node.ext.python.nodes.Attribute'>: [?:?] - 1
+                  <class 'node.ext.python.nodes.Function'>: [?:?] - 1
+                    <class 'node.ext.python.nodes.Decorator'>: [?:?] - 1
+                  <class 'node.ext.python.nodes.Function'>: [?:?] - 1
+                    <class 'node.ext.python.nodes.Decorator'>: [?:?] - 1
+                  <class 'node.ext.python.nodes.Function'>: [?:?] - 1
+                    <class 'node.ext.python.nodes.Decorator'>: [?:?] - 1
+                  <class 'node.ext.python.nodes.Function'>: [?:?] - 1
+            <class 'node.ext.python.nodes.Module'>: [?:?] - -1
+              <class 'node.ext.python.nodes.Block'>: [?:?] - 0
+              <class 'node.ext.python.nodes.Import'>: [?:?] - 0
+              <class 'node.ext.python.nodes.Class'>: [?:?] - 0
+              <class 'node.ext.python.nodes.Class'>: [?:?] - 0
+                <class 'node.ext.python.nodes.Decorator'>: [?:?] - 0
+              <class 'node.ext.python.nodes.Class'>: [?:?] - 0
+      <class 'node.ext.template._api.JinjaTemplate'>: setup.py
