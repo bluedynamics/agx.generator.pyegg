@@ -109,7 +109,6 @@ def eggdirectories(self, source, target):
             set_copyright(source, module)
     
     #store all pyeggs in a token
-#    import pdb;pdb.set_trace()
     eggtok=token('pyeggs',True,packages=set(),directories=set())
     eggtok.packages.add(source)
     eggtok.directories.add(package)
@@ -149,7 +148,6 @@ registerScope('pyclass', 'uml2fs', [IClass], Scope)
 def pyclass(self, source, target):
     """Create python classes.
     """
-#    import pdb;pdb.set_trace()
     if source.stereotype('pyegg:stub') is not None:
         return
     name = source.name
