@@ -107,6 +107,13 @@ def eggdirectories(self, source, target):
                 module['ns_dec'] = block
         else:
             set_copyright(source, module)
+    
+    #store all pyeggs in a token
+#    import pdb;pdb.set_trace()
+    eggtok=token('pyeggs',True,packages=set(),directories=set())
+    eggtok.packages.add(source)
+    eggtok.directories.add(package)
+    
     target.finalize(source, package)
 
 registerScope('pypackage', 'uml2fs', None, PackageScope)
