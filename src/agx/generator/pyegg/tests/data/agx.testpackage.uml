@@ -73,4 +73,6 @@
   <pyegg:decorator xmi:id="_t6WDEIhGEd-3SN0KTSCKDw" base_Class="_dLYmcH8GEd-FrYXmSDxOlg" name="classdecorator"/>
   <pyegg:function xmi:id="_XZADYO_1EeC7tul8mqamKw" base_Class="_P4thwO_1EeC7tul8mqamKw" args="a, b" kwargs="c=99"/>
   <pyegg:function xmi:id="_rQfLMO_1EeC7tul8mqamKw" base_Class="_gZ6qQO_1EeC7tul8mqamKw"/>
+  <pyegg:decorator xmi:id="_Cce5QPANEeC7tul8mqamKw" base_Class="_gZ6qQO_1EeC7tul8mqamKw" name="function_decorator" args="a" kwargs=""/>
+  <pyegg:decorator xmi:id="_1axhAPANEeC7tul8mqamKw" base_Class="_P4thwO_1EeC7tul8mqamKw" name="handler"/>
 </xmi:XMI>

@@ -68,10 +68,9 @@ def pyfunctionfromclass(self, source, target):
     """
     if source.stereotype('pyegg:function') is None:
         return
-    tgv = TaggedValues(source)
-    arguments = tgv.direct('args', 'pyegg:function')
-    kwarguments = tgv.direct('kwargs', 'pyegg:function')
     class_ = read_target_node(source, target.target)
+    dec_keys = [dec.name for dec in class_.decorators()]
+    decorators = [class_.detach(key) for key in dec_keys]
     parent = class_.parent
     functions = parent.functions(class_.classname)
     if functions:
@@ -84,5 +83,13 @@ def pyfunctionfromclass(self, source, target):
         function.__name__ = function.uuid
         parent.insertbefore(function, class_)
     del parent[str(class_.uuid)]
-    # XXX: decorators
-    # XXX: s_args + kw
+    tgv = TaggedValues(source)
+    _args = tgv.direct('args', 'pyegg:function')
+    _kwargs = tgv.direct('kwargs', 'pyegg:function')
+    if _args is not UNSET:
+        function.s_args = _args
+    if _kwargs is not UNSET:
+        function.s_kwargs = _kwargs
+    for dec in decorators:
+        # XXX: check decorator duplicity
+        function[str(dec.uuid)] = dec
