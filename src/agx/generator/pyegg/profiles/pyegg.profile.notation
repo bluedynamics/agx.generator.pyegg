@@ -164,7 +164,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QjdT_qfgEeCYbMocf1hIjA"/>
       </children>
       <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_cufvYBDXEd-S66cbs9vitw"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Qjcs4afgEeCYbMocf1hIjA" x="536" y="256" width="146" height="106"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Qjcs4afgEeCYbMocf1hIjA" x="492" y="256" width="146" height="106"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_RALsMKfgEeCYbMocf1hIjA" type="1026" fontName="Ubuntu" fontHeight="12" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RALsMqfgEeCYbMocf1hIjA" source="ShadowFigure">
@@ -384,6 +384,32 @@
       <element xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Interface"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_h1RDAe05EeCwj9v4T1_ceQ" x="508" y="168"/>
     </children>
+    <children xmi:type="notation:Shape" xmi:id="_mH_kMO_xEeCvpoSe_joWQA" type="1026" fontName="Lucida Grande" fontHeight="11" lineColor="0">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mIALQO_xEeCvpoSe_joWQA" source="ShadowFigure">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mIALQe_xEeCvpoSe_joWQA" key="ShadowFigure_Value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mIALQu_xEeCvpoSe_joWQA" source="displayNameLabelIcon">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mIALQ-_xEeCvpoSe_joWQA" key="displayNameLabelIcon_value" value="false"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mIALRO_xEeCvpoSe_joWQA" source="QualifiedName">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mIALRe_xEeCvpoSe_joWQA" key="QualifiedNameDepth" value="1000"/>
+      </eAnnotations>
+      <children xmi:type="notation:DecorationNode" xmi:id="_mIALRu_xEeCvpoSe_joWQA" type="1034"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_mIALR-_xEeCvpoSe_joWQA" type="1071">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_mIALSO_xEeCvpoSe_joWQA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_mIALSe_xEeCvpoSe_joWQA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_mIALSu_xEeCvpoSe_joWQA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mIALS-_xEeCvpoSe_joWQA"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_mIALTO_xEeCvpoSe_joWQA" type="1019">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_mIALTe_xEeCvpoSe_joWQA"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_mIALTu_xEeCvpoSe_joWQA"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_mIALT-_xEeCvpoSe_joWQA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mIALUO_xEeCvpoSe_joWQA"/>
+      </children>
+      <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_mH9vAO_xEeCvpoSe_joWQA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mH_kMe_xEeCvpoSe_joWQA" x="680" y="256"/>
+    </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_5RzyYaffEeCYbMocf1hIjA"/>
     <element xmi:type="uml:Profile" href="pyegg.profile.uml#_HHBJsNqqEd6cif0axL0c4w"/>
     <edges xmi:type="notation:Connector" xmi:id="_cltIYKfhEeCYbMocf1hIjA" type="1013" source="_HWNhQKfgEeCYbMocf1hIjA" target="_VwRhoKfhEeCYbMocf1hIjA" lineColor="0">
@@ -432,6 +458,12 @@
       <element xmi:type="uml:Extension" href="pyegg.profile.uml#_mZT18e05EeCwj9v4T1_ceQ"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mZbxwu05EeCwj9v4T1_ceQ" points="[-8, -23, 29, 63]$[-31, -111, 6, -25]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mZqbQO05EeCwj9v4T1_ceQ" id="(0.4863013698630137,0.2169811320754717)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_pwhKEO_xEeCvpoSe_joWQA" type="1013" source="_mH_kMO_xEeCvpoSe_joWQA" target="_VwTW0KfhEeCYbMocf1hIjA" lineColor="0">
+      <styles xmi:type="notation:FontStyle" xmi:id="_pwhKEe_xEeCvpoSe_joWQA" fontName="Lucida Grande" fontHeight="11"/>
+      <element xmi:type="uml:Extension" href="pyegg.profile.uml#_pwfU4e_xEeCvpoSe_joWQA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pwhKEu_xEeCvpoSe_joWQA" points="[3, -7, -8, 67]$[3, -99, -8, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pwi_QO_xEeCvpoSe_joWQA" id="(0.55,0.07)"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>
