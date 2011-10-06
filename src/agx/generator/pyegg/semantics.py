@@ -9,6 +9,10 @@ from agx.core import (
 from agx.core.util import read_target_node
 from node.ext import python
 from node.ext.python.interfaces import IClass
+from node.ext.uml.utils import (
+    TaggedValues,
+    UNSET,
+)
 
 @handler('inheritanceorder', 'uml2fs', 'semanticsgenerator', 'pyclass')
 def inheritanceorder(self, source, target):
@@ -31,35 +35,54 @@ def inheritanceorder(self, source, target):
     except ComponentLookupError, e:
         pass
     
-def cmp(a,b):
+def cmp(a, b):
     if b.classname in a.bases:
-        res= 1
+        return 1
     elif a.classname in b.bases:
-        res= -1
-    else:
-        res= 0
-        
-    return res
-    
-def bubblesort(arr,cmp):
+        return -1
+    return 0
+
+def bubblesort(arr, cmp):
     for j in range(len(arr)):
-        for i in range(j,len(arr)):
-            if cmp(arr[i],arr[j])<0:
-                tmp=arr[j]
-                arr[j]=arr[i]
-                arr[i]=tmp
+        for i in range(j, len(arr)):
+            if cmp(arr[i], arr[j]) < 0:
+                tmp = arr[j]
+                arr[j] = arr[i]
+                arr[i] = tmp
 
 @handler('inheritancesorter', 'uml2fs', 'semanticsgenerator', 'pymodule', order=90)
 def inheritancesorter(self, source, target):
-    """Create python modules.
+    """Sort classes in modules by inheritance dependencies.
     """
-    module = read_target_node(source,target.target)
+    module = read_target_node(source, target.target)
     classes=module.filteredvalues(IClass)
     for cl in classes:
         module.detach(cl.__name__)
-        
-    bubblesort(classes,cmp)
-    
+    bubblesort(classes, cmp)
     for cl in classes:
         module.insertlast(cl)
 
+@handler('pyfunctionfromclass', 'uml2fs', 'semanticsgenerator', 'pyclass')
+def pyfunctionfromclass(self, source, target):
+    """Convert Class to function if class has stereotype function set.
+    """
+    if source.stereotype('pyegg:function') is None:
+        return
+    tgv = TaggedValues(source)
+    arguments = tgv.direct('args', 'pyegg:function')
+    kwarguments = tgv.direct('kwargs', 'pyegg:function')
+    class_ = read_target_node(source, target.target)
+    parent = class_.parent
+    functions = parent.functions(class_.classname)
+    if functions:
+        if len(functions) > 1:
+            raise "expected exactly one function by name '%s'" \
+                % class_.classname
+        function = functions[0]
+    else:
+        function = python.Function(class_.classname)
+        function.__name__ = function.uuid
+        parent.insertbefore(function, class_)
+    del parent[str(class_.uuid)]
+    # XXX: decorators
+    # XXX: s_args + kw

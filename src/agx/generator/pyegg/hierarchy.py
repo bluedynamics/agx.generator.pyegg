@@ -158,7 +158,7 @@ def pyclass(self, source, target):
         target.finalize(source, class_)
         return
     class_ = python.Class(name)
-    module[name] = class_
+    module[str(class_.uuid)] = class_
     target.finalize(source, class_)
 
 registerScope('pyfunction', 'uml2fs', [IOperation], Scope)
@@ -174,7 +174,7 @@ def pyfunction(self, source, target):
         target.finalize(source, function)
         return
     function = python.Function(name)
-    container[name] = function
+    container[str(function.uuid)] = function
     target.finalize(source, function)
 
 registerScope('pydecorator', 'uml2fs', None, DecoratorScope)
@@ -192,7 +192,7 @@ def pydecorator(self, source, target):
         decorator = container.decorators(name)[0]
     else:
         decorator = python.Decorator(name)
-        container[name] = decorator
+        container[str(decorator.uuid)] = decorator
     if args is not None:
         decorator.s_args = args
     if kwargs is not None:
@@ -217,5 +217,5 @@ def pyattribute(self, source, target):
         return
     value = expression is not None and expression or 'None' 
     attribute = python.Attribute([name], value=value)
-    container[name] = attribute
+    container[str(attribute.uuid)] = attribute
     target.finalize(source, attribute)

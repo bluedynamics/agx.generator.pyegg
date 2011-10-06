@@ -2,6 +2,7 @@
 # GNU General Public License Version 2
 
 import os
+import uuid
 from node.ext import python
 from node.ext.uml.utils import (
     TaggedValues,
@@ -25,7 +26,7 @@ def set_copyright(source, module):
         return
     cp = cp.split(',')
     block = python.Block()
-    block.__name__ = 'copyright_block'
+    block.__name__ = str(uuid.uuid4())
     block.lines = ['# %s' % line.strip() for line in cp]
     values = module.values()
     if len(values) == 0:

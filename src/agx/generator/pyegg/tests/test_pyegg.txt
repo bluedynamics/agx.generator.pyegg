@@ -53,16 +53,22 @@ Setup configuration and emulate main routine.
                     <class 'node.ext.python.nodes.Block'>: [22:22] - 2
                   <class 'node.ext.python.nodes.Function'>: [24:25] - 1
                     <class 'node.ext.python.nodes.Block'>: [25:25] - 2
-            <class 'node.ext.python.nodes.Module'>: [1:18] - -1
+              <class 'node.ext.python.nodes.Module'>: [1:6] - -1
+                <class 'node.ext.python.nodes.Block'>: [2:3] - 0
+                <class 'node.ext.python.nodes.Function'>: [5:6] - 0
+                  <class 'node.ext.python.nodes.Block'>: [6:6] - 1
+            <class 'node.ext.python.nodes.Module'>: [1:21] - -1
               <class 'node.ext.python.nodes.Block'>: [2:3] - 0
               <class 'node.ext.python.nodes.Import'>: [5:5] - 0
-              <class 'node.ext.python.nodes.Class'>: [7:8] - 0
+              <class 'node.ext.python.nodes.Function'>: [7:8] - 0
                 <class 'node.ext.python.nodes.Block'>: [8:8] - 1
               <class 'node.ext.python.nodes.Class'>: [10:11] - 0
                 <class 'node.ext.python.nodes.Block'>: [11:11] - 1
               <class 'node.ext.python.nodes.Class'>: [13:14] - 0
                 <class 'node.ext.python.nodes.Block'>: [14:14] - 1
-              <class 'node.ext.python.nodes.Class'>: [16:18] - 0
-                <class 'node.ext.python.nodes.Block'>: [18:18] - 1
+              <class 'node.ext.python.nodes.Class'>: [16:17] - 0
+                <class 'node.ext.python.nodes.Block'>: [17:17] - 1
+              <class 'node.ext.python.nodes.Class'>: [19:21] - 0
+                <class 'node.ext.python.nodes.Block'>: [21:21] - 1
                 <class 'node.ext.python.nodes.Decorator'>: [?:?] - 0
       <class 'node.ext.template._api.JinjaTemplate'>: setup.py
