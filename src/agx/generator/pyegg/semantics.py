@@ -90,6 +90,12 @@ def pyfunctionfromclass(self, source, target):
         function.s_args = _args
     if _kwargs is not UNSET:
         function.s_kwargs = _kwargs
+    other_decorators = function.decorators()
     for dec in decorators:
-        # XXX: check decorator duplicity
+        exists = 0
+        for other in other_decorators:
+            if dec.equals(other):
+                exists = 1
+        if exists:
+            continue
         function[str(dec.uuid)] = dec
