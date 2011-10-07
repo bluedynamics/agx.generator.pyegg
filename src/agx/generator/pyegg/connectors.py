@@ -6,6 +6,7 @@ from agx.core import (
     token,
 )
 from agx.core.util import read_target_node
+from agx.generator.pyegg.utils import class_base_name
 from node.ext.uml.utils import (
     Inheritance,
     TaggedValues,
@@ -13,23 +14,6 @@ from node.ext.uml.utils import (
 )
 from node.ext import python
 from node.ext.python.utils import Imports
-
-
-def base_name(class_):
-    """Extract base name for Class.
-    """
-    path = class_.path
-    path = path[:len(path) - 1]
-    ret = list()
-    while True:
-        next = path.pop()
-        if next == 'src':
-            break
-        if next.endswith('.py'):
-            next = next[:len(next) - 3]
-        ret.append(next)
-    ret.reverse()
-    return '.'.join(ret)
 
 
 @handler('classgeneralization', 'uml2fs', 'connectorgenerator',
@@ -52,7 +36,8 @@ def generalization(self, source, target):
             continue
         if targetclass.parent is not derive_from.parent:
             imp = Imports(targetclass.parent)
-            imp.set(base_name(derive_from), [[derive_from.classname, None]])
+            imp.set(class_base_name(derive_from),
+                    [[derive_from.classname, None]])
 
 
 @handler('inheritanctokenizer', 'uml2fs', 'connectorgenerator',

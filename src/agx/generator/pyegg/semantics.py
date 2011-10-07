@@ -67,6 +67,7 @@ def inheritancesorter(self, source, target):
     for cl in classes:
         module.insertlast(cl)
 
+
 @handler('eggemptymoduleremoval', 'uml2fs', 'semanticsgenerator',
          'pythonegg', order=40)
 @handler('packageemptymoduleremoval', 'uml2fs', 'semanticsgenerator',

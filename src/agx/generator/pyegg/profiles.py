@@ -5,6 +5,7 @@ import agx.generator.pyegg
 from zope.interface import implements
 from agx.core.interfaces import IProfileLocation
 
+
 class ProfileLocation(object):
     implements(IProfileLocation)
     name = u'pyegg.profile.uml'

@@ -49,3 +49,20 @@ def set_copyright(source, module):
             if first.text == block.text:
                 return
         module.insertbefore(block, values[0])
+
+
+def class_base_name(class_):
+    """Extract base name for Class.
+    """
+    path = class_.path
+    path = path[:len(path) - 1]
+    ret = list()
+    while True:
+        next = path.pop()
+        if next == 'src':
+            break
+        if next.endswith('.py'):
+            next = next[:len(next) - 3]
+        ret.append(next)
+    ret.reverse()
+    return '.'.join(ret)

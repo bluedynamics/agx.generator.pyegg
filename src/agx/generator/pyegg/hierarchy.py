@@ -5,7 +5,11 @@ from agx.core import (
     handler,
     token,
 )
-from agx.core.util import read_target_node
+from agx.core.util import (
+    read_target_node,
+    dotted_path,
+)
+from agx.generator.pyegg.utils import class_base_name
 from node.ext.uml.utils import (
     TaggedValues,
     UNSET,
@@ -14,6 +18,7 @@ from node.ext.directory.interfaces import IDirectory
 from node.ext.directory import Directory
 from node.ext.template import JinjaTemplate
 from node.ext import python
+from node.ext.python.utils import Imports
 from agx.generator.pyegg.utils import (
     templatepath,
     set_copyright,
@@ -142,6 +147,10 @@ def pyclass(self, source, target):
         return
     class_ = python.Class(name)
     module[str(class_.uuid)] = class_
+    if not source.stereotype('pyegg:function') \
+      and not source.parent.stereotype('pyegg:pymodule'):
+        imp = Imports(module.parent['__init__.py'])
+        imp.set(class_base_name(class_), [[class_.classname, None]])
     target.finalize(source, class_)
 
 
