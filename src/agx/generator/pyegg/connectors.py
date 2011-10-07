@@ -44,13 +44,13 @@ def generalization(self, source, target):
             tgv = TaggedValues(obj.context)
             import_from = tgv.direct('import', 'pyegg:stub')
             if import_from is not UNSET:
-                imp = Imports(targetclass.__parent__)
+                imp = Imports(targetclass.parent)
                 imp.set(import_from, [[obj.context.name, None]])
         derive_from = read_target_node(obj.context, target.target)
         if not derive_from:
             continue
-        if targetclass.__parent__ is not derive_from.__parent__:
-            imp = Imports(targetclass.__parent__)
+        if targetclass.parent is not derive_from.parent:
+            imp = Imports(targetclass.parent)
             imp.set(base_name(derive_from), [[derive_from.classname, None]])
 
 registerScope('generalization', 'uml2fs', [IGeneralization], Scope)

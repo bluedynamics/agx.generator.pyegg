@@ -52,7 +52,7 @@ def eggsetup(self, source, target):
     """
     tgv = TaggedValues(source)
     version = tgv.direct('version', 'pyegg:pyegg', '1.0')
-    project = source.__name__
+    project = source.name
     cp = tgv.direct('copyright', 'pyegg:pyegg', '')
     cp = cp.split(',')
     cp = [line.strip() for line in cp]
@@ -94,7 +94,7 @@ def eggdirectories(self, source, target):
     """Create egg directory structure and corresponding ``__init__.py`` files.
     """
     package = target.anchor['src']
-    names = source.__name__.split('.')    
+    names = source.name.split('.')    
     for i in range(len(names)):
         package = package[names[i]]
         module = python.Module()
@@ -109,7 +109,7 @@ def eggdirectories(self, source, target):
             set_copyright(source, module)
     
     #store all pyeggs in a token
-    eggtok=token('pyeggs',True,packages=set(),directories=set())
+    eggtok = token('pyeggs',True, packages=set(), directories=set())
     eggtok.packages.add(source)
     eggtok.directories.add(package)
     

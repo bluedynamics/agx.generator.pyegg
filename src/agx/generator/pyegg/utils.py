@@ -19,9 +19,9 @@ def set_copyright(source, module):
         cp = tgv.direct('copyright', 'pyegg:pyegg')
         if cp is not UNSET:
             break
-        if source.__parent__ is None:
+        if source.parent is None:
             break
-        source = source.__parent__
+        source = source.parent
     if cp == '' or cp == UNSET:
         return
     cp = cp.split(',')
@@ -30,7 +30,7 @@ def set_copyright(source, module):
     block.lines = ['# %s' % line.strip() for line in cp]
     values = module.values()
     if len(values) == 0:
-        module[block.__name__] = block
+        module[block.name] = block
     else:
         first = values[0]
         if isinstance(first, python.Block):

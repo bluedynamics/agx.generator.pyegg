@@ -57,7 +57,7 @@ def inheritancesorter(self, source, target):
     module = read_target_node(source, target.target)
     classes=module.filteredvalues(IClass)
     for cl in classes:
-        module.detach(cl.__name__)
+        module.detach(cl.name)
     bubblesort(classes, cmp)
     for cl in classes:
         module.insertlast(cl)

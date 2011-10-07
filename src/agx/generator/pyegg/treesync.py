@@ -14,23 +14,23 @@ class PackageSyncer(TreeSyncPreperator):
         super(PackageSyncer, self).__call__(source)
         if (IClass.providedBy(source) or IInterface.providedBy(source)) \
           and IDirectory.providedBy(self.anchor) \
-          and (source.__parent__.stereotype('pyegg:pypackage') is not None \
-          or source.__parent__.stereotype('pyegg:pyegg') is not None):
+          and (source.parent.stereotype('pyegg:pypackage') is not None \
+          or source.parent.stereotype('pyegg:pyegg') is not None):
             modulename = '%s.py' % source.name.lower()
             self.anchor[modulename] = Module()
             self.anchor = self.anchor[modulename]
         elif (IClass.providedBy(source)  or IInterface.providedBy(source)) \
           and IModule.providedBy(self.anchor) \
-          and (source.__parent__.stereotype('pyegg:pypackage') is not None \
-          or source.__parent__.stereotype('pyegg:pyegg') is not None):
+          and (source.parent.stereotype('pyegg:pypackage') is not None \
+          or source.parent.stereotype('pyegg:pyegg') is not None):
             modulename = '%s.py' % source.name.lower()
-            container = self.anchor.__parent__
+            container = self.anchor.parent
             container[modulename] = Module()
             self.anchor = container[modulename]
         else:
-            if source.__parent__ is None:
+            if source.parent is None:
                 return
-            target_node = read_target_node(source.__parent__, self.target)
+            target_node = read_target_node(source.parent, self.target)
             if not target_node:
                 super(PackageSyncer, self).__call__(source)
                 return
