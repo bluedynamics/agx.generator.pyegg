@@ -92,12 +92,10 @@ def eggdirectories(self, source, target):
                 module['ns_dec'] = block
         else:
             set_copyright(source, module)
-    
     #store all pyeggs in a token
-    eggtok = token('pyeggs',True, packages=set(), directories=set())
+    eggtok = token('pyeggs', True, packages=set(), directories=set())
     eggtok.packages.add(source)
     eggtok.directories.add(package)
-    
     target.finalize(source, package)
 
 
@@ -123,6 +121,9 @@ def pymodule(self, source, target):
     container = target.anchor
     container['%s.py' % source.name] = module
     set_copyright(source, module)
+    #store all pymodules in a token
+    modtok = token('pymodules', True, modules=set())
+    modtok.modules.add(module)
     target.finalize(source, module)
 
 

@@ -14,6 +14,10 @@ def templatepath(name):
     return os.path.join(os.path.dirname(__file__), 'templates/%s' % name)
 
 
+def as_comment(lines):
+    return ['# %s' % line.strip() for line in lines]
+
+
 def get_copyright(source):
     cp = ''
     while True:
@@ -31,10 +35,9 @@ def get_copyright(source):
 
 
 def set_copyright(source, module):
-    cp = get_copyright(source)
     block = python.Block()
     block.__name__ = str(uuid.uuid4())
-    block.lines = ['# %s' % line.strip() for line in cp]
+    block.lines = as_comment(get_copyright(source))
     values = module.values()
     if len(values) == 0:
         module[block.name] = block
