@@ -15,6 +15,8 @@ def templatepath(name):
 
 
 def as_comment(lines):
+    if not lines:
+        return list()
     return ['# %s' % line.strip() for line in lines]
 
 
