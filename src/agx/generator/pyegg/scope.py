@@ -1,9 +1,19 @@
 # Copyright BlueDynamics Alliance - http://bluedynamics.com
 # GNU General Public License Version 2
 
-from agx.core import Scope
-from node.ext.uml.interfaces import IModel
-from node.ext.uml.interfaces import IPackage
+from agx.core import (
+    Scope,
+    registerScope,
+)
+from node.ext.uml.interfaces import (
+    IModel,
+    IPackage,
+    IClass,
+    IOperation,
+    IProperty,
+    IGeneralization,
+)
+
 
 class PackageScope(Scope):
     
@@ -19,6 +29,7 @@ class PackageScope(Scope):
             return False
         return True
 
+
 class EggScope(PackageScope):
     
     def __call__(self, node):
@@ -27,6 +38,7 @@ class EggScope(PackageScope):
           or node.stereotype('pyegg:pyegg') is None:
             return False
         return True
+
 
 class ModuleScope(PackageScope):
     
@@ -37,9 +49,20 @@ class ModuleScope(PackageScope):
             return False
         return True
 
+
 class DecoratorScope(PackageScope):
     
     def __call__(self, node):
         if node.stereotype('pyegg:decorator') is None:
             return False
         return True
+
+
+registerScope('pythonegg', 'uml2fs', None, EggScope)
+registerScope('pypackage', 'uml2fs', None, PackageScope)
+registerScope('pymodule', 'uml2fs', None, ModuleScope)
+registerScope('pyclass', 'uml2fs', [IClass], Scope)
+registerScope('pyfunction', 'uml2fs', [IOperation], Scope)
+registerScope('pydecorator', 'uml2fs', None, DecoratorScope)
+registerScope('pyattribute', 'uml2fs', [IProperty], Scope)
+registerScope('generalization', 'uml2fs', [IGeneralization], Scope)

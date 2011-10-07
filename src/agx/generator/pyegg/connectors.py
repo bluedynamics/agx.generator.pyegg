@@ -4,17 +4,15 @@
 from agx.core import (
     handler,
     token,
-    Scope,
-    registerScope,
 )
 from agx.core.util import read_target_node
-from node.ext.uml.interfaces import IGeneralization
 from node.ext.uml.utils import (
     Inheritance,
     TaggedValues,
     UNSET,
 )
 from node.ext.python.utils import Imports
+
 
 def base_name(class_):
     """Extract base name for Class.
@@ -31,6 +29,7 @@ def base_name(class_):
         ret.append(next)
     ret.reverse()
     return '.'.join(ret)
+
 
 @handler('classgeneralization', 'uml2fs', 'connectorgenerator', 'pyclass')
 def generalization(self, source, target):
@@ -53,7 +52,6 @@ def generalization(self, source, target):
             imp = Imports(targetclass.parent)
             imp.set(base_name(derive_from), [[derive_from.classname, None]])
 
-registerScope('generalization', 'uml2fs', [IGeneralization], Scope)
 
 @handler('inheritanctokenizer', 'uml2fs', 'connectorgenerator',
          'generalization')

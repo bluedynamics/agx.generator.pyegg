@@ -4,17 +4,8 @@
 from agx.core import (
     handler,
     token,
-    Scope,
-    registerScope,
 )
 from agx.core.util import read_target_node
-from node.ext.uml.interfaces import (
-    IModel,
-    IPackage,
-    IClass,
-    IOperation,
-    IProperty,
-)
 from node.ext.uml.utils import (
     TaggedValues,
     UNSET,
@@ -23,19 +14,11 @@ from node.ext.directory.interfaces import IDirectory
 from node.ext.directory import Directory
 from node.ext.template import JinjaTemplate
 from node.ext import python
-
-from agx.generator.pyegg.scope import (
-    PackageScope,
-    EggScope,
-    ModuleScope,
-    DecoratorScope,
-)
 from agx.generator.pyegg.utils import (
     templatepath,
     set_copyright,
 )
 
-registerScope('pythonegg', 'uml2fs', None, EggScope)
 
 @handler('eggdocuments', 'uml2fs', 'hierarchygenerator',
          'pythonegg', order=10)
@@ -44,6 +27,7 @@ def eggdocuments(self, source, target):
     """
     target = target.anchor
     package = target['src']
+
 
 @handler('eggsetup', 'uml2fs', 'hierarchygenerator',
          'pythonegg', order=10)
@@ -88,6 +72,7 @@ def eggsetup(self, source, target):
                     'zip_safe': zip_safe,}
     target.anchor['setup.py'] = setup
 
+
 @handler('eggdirectories', 'uml2fs', 'hierarchygenerator',
          'pythonegg', order=20)
 def eggdirectories(self, source, target):
@@ -115,7 +100,6 @@ def eggdirectories(self, source, target):
     
     target.finalize(source, package)
 
-registerScope('pypackage', 'uml2fs', None, PackageScope)
 
 @handler('pypackage', 'uml2fs', 'hierarchygenerator', 'pypackage', order=30)
 def pypackage(self, source, target):
@@ -130,7 +114,6 @@ def pypackage(self, source, target):
     set_copyright(source, module)
     target.finalize(source, package)
 
-registerScope('pymodule', 'uml2fs', None, ModuleScope)
 
 @handler('pymodule', 'uml2fs', 'hierarchygenerator', 'pymodule', order=30)
 def pymodule(self, source, target):
@@ -142,7 +125,6 @@ def pymodule(self, source, target):
     set_copyright(source, module)
     target.finalize(source, module)
 
-registerScope('pyclass', 'uml2fs', [IClass], Scope)
 
 @handler('pyclass', 'uml2fs', 'hierarchygenerator', 'pyclass', order=30)
 def pyclass(self, source, target):
@@ -161,7 +143,6 @@ def pyclass(self, source, target):
     module[str(class_.uuid)] = class_
     target.finalize(source, class_)
 
-registerScope('pyfunction', 'uml2fs', [IOperation], Scope)
 
 @handler('pyfunction', 'uml2fs', 'hierarchygenerator', 'pyfunction', order=30)
 def pyfunction(self, source, target):
@@ -177,7 +158,6 @@ def pyfunction(self, source, target):
     container[str(function.uuid)] = function
     target.finalize(source, function)
 
-registerScope('pydecorator', 'uml2fs', None, DecoratorScope)
 
 @handler('pydecorator', 'uml2fs', 'hierarchygenerator', 'pydecorator', order=40)
 def pydecorator(self, source, target):
@@ -198,7 +178,6 @@ def pydecorator(self, source, target):
     if kwargs is not None:
         decorator.s_kwargs = kwargs
 
-registerScope('pyattribute', 'uml2fs', [IProperty], Scope)
 
 @handler('pyattribute', 'uml2fs', 'hierarchygenerator', 'pyattribute', order=40)
 def pyattribute(self, source, target):

@@ -8,6 +8,7 @@ from node.ext.directory.interfaces import IDirectory
 from node.ext.python.interfaces import IModule
 from node.ext.python import Module
 
+
 class PackageSyncer(TreeSyncPreperator):
     
     def __call__(self, source):

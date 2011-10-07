@@ -9,8 +9,10 @@ from node.ext.uml.utils import (
     UNSET,
 )
 
+
 def templatepath(name):
     return os.path.join(os.path.dirname(__file__), 'templates/%s' % name)
+
 
 def set_copyright(source, module):
     cp = ''

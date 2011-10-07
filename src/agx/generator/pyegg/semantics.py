@@ -8,13 +8,14 @@ from agx.core import (
 )
 from agx.core.util import read_target_node
 from node.ext import python
-from node.ext.python.interfaces import IClass
 from node.ext.uml.utils import (
     TaggedValues,
     UNSET,
 )
 
-@handler('inheritanceorder', 'uml2fs', 'semanticsgenerator', 'pyclass')
+
+@handler('inheritanceorder', 'uml2fs', 'semanticsgenerator',
+         'pyclass', order=10)
 def inheritanceorder(self, source, target):
     """Fix inheritance order.
     """
@@ -34,35 +35,10 @@ def inheritanceorder(self, source, target):
         target.bases = bases
     except ComponentLookupError, e:
         pass
-    
-def cmp(a, b):
-    if b.classname in a.bases:
-        return 1
-    elif a.classname in b.bases:
-        return -1
-    return 0
 
-def bubblesort(arr, cmp):
-    for j in range(len(arr)):
-        for i in range(j, len(arr)):
-            if cmp(arr[i], arr[j]) < 0:
-                tmp = arr[j]
-                arr[j] = arr[i]
-                arr[i] = tmp
 
-@handler('inheritancesorter', 'uml2fs', 'semanticsgenerator', 'pymodule', order=90)
-def inheritancesorter(self, source, target):
-    """Sort classes in modules by inheritance dependencies.
-    """
-    module = read_target_node(source, target.target)
-    classes=module.filteredvalues(IClass)
-    for cl in classes:
-        module.detach(cl.name)
-    bubblesort(classes, cmp)
-    for cl in classes:
-        module.insertlast(cl)
-
-@handler('pyfunctionfromclass', 'uml2fs', 'semanticsgenerator', 'pyclass')
+@handler('pyfunctionfromclass', 'uml2fs', 'semanticsgenerator',
+         'pyclass', order=20)
 def pyfunctionfromclass(self, source, target):
     """Convert Class to function if class has stereotype function set.
     """
@@ -112,3 +88,37 @@ def pyfunctionfromclass(self, source, target):
         if exists:
             continue
         function[str(dec.uuid)] = dec
+
+
+@handler('inheritancesorter', 'uml2fs', 'semanticsgenerator', 
+         'pymodule', order=30)
+def inheritancesorter(self, source, target):
+    """Sort classes in modules by inheritance dependencies.
+    """
+    def cmp(a, b):
+        if b.classname in a.bases:
+            return 1
+        elif a.classname in b.bases:
+            return -1
+        return 0
+    def bubblesort(arr, cmp):
+        for j in range(len(arr)):
+            for i in range(j, len(arr)):
+                if cmp(arr[i], arr[j]) < 0:
+                    tmp = arr[j]
+                    arr[j] = arr[i]
+                    arr[i] = tmp
+    module = read_target_node(source, target.target)
+    classes=module.classes()
+    for cl in classes:
+        module.detach(cl.name)
+    bubblesort(classes, cmp)
+    for cl in classes:
+        module.insertlast(cl)
+
+
+@handler('emptymoduleremoval', 'uml2fs', 'semanticsgenerator',
+         'pymodule', order=40)
+def emptymoduleremoval(self, source, target):
+    if not source.parent.stereotype('pyegg:pymodule'):
+        pass
