@@ -71,8 +71,13 @@ def pyfunctionfromclass(self, source, target):
     class_ = read_target_node(source, target.target)
     dec_keys = [dec.name for dec in class_.decorators()]
     decorators = [class_.detach(key) for key in dec_keys]
-    parent = class_.parent
-    functions = parent.functions(class_.classname)
+    module = class_.parent
+    container = module
+    delmodule = False
+    if not source.parent.stereotype('pyegg:pymodule'):
+        container = module.parent['__init__.py']
+        delmodule = True
+    functions = container.functions(class_.classname)
     if functions:
         if len(functions) > 1:
             raise "expected exactly one function by name '%s'" \
@@ -81,8 +86,11 @@ def pyfunctionfromclass(self, source, target):
     else:
         function = python.Function(class_.classname)
         function.__name__ = function.uuid
-        parent.insertbefore(function, class_)
-    del parent[str(class_.uuid)]
+        container.insertlast(function)
+    if delmodule:
+        del module.parent[module.name]
+    else:
+        del module[str(class_.uuid)]
     tgv = TaggedValues(source)
     _args = tgv.direct('args', 'pyegg:function')
     _kwargs = tgv.direct('kwargs', 'pyegg:function')
