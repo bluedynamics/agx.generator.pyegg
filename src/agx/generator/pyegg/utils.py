@@ -14,7 +14,7 @@ def templatepath(name):
     return os.path.join(os.path.dirname(__file__), 'templates/%s' % name)
 
 
-def set_copyright(source, module):
+def get_copyright(source):
     cp = ''
     while True:
         tgv = TaggedValues(source)
@@ -27,6 +27,11 @@ def set_copyright(source, module):
     if cp == '' or cp == UNSET:
         return
     cp = cp.split(',')
+    return cp
+
+
+def set_copyright(source, module):
+    cp = get_copyright(source)
     block = python.Block()
     block.__name__ = str(uuid.uuid4())
     block.lines = ['# %s' % line.strip() for line in cp]

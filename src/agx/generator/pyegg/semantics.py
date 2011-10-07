@@ -12,6 +12,7 @@ from node.ext.uml.utils import (
     TaggedValues,
     UNSET,
 )
+from agx.generator.pyegg.utils import get_copyright
 
 
 @handler('inheritanceorder', 'uml2fs', 'semanticsgenerator',
@@ -49,10 +50,10 @@ def pyfunctionfromclass(self, source, target):
     decorators = [class_.detach(key) for key in dec_keys]
     module = class_.parent
     container = module
-    delmodule = False
+    #delmodule = False
     if not source.parent.stereotype('pyegg:pymodule'):
         container = module.parent['__init__.py']
-        delmodule = True
+        #delmodule = True
     functions = container.functions(class_.classname)
     if functions:
         if len(functions) > 1:
@@ -63,15 +64,16 @@ def pyfunctionfromclass(self, source, target):
         function = python.Function(class_.classname)
         function.__name__ = function.uuid
         container.insertlast(function)
-    if delmodule:
-        if len(module) > 2:
+    #if delmodule:
+    #    if len(module) > 2:
             # XXX: improve -> expects copyright block and function
             #      check for docstring block by compairing contents
-            del module[str(class_.uuid)]
-        else:
-            del module.parent[module.name]
-    else:
-        del module[str(class_.uuid)]
+    #        del module[str(class_.uuid)]
+    #    else:
+    #        del module.parent[module.name]
+    #else:
+    #    del module[str(class_.uuid)]
+    del module[str(class_.uuid)]
     tgv = TaggedValues(source)
     _args = tgv.direct('args', 'pyegg:function')
     _kwargs = tgv.direct('kwargs', 'pyegg:function')
@@ -120,5 +122,16 @@ def inheritancesorter(self, source, target):
 @handler('emptymoduleremoval', 'uml2fs', 'semanticsgenerator',
          'pymodule', order=40)
 def emptymoduleremoval(self, source, target):
-    if not source.parent.stereotype('pyegg:pymodule'):
-        pass
+    #import pdb;pdb.set_trace()
+    if source.parent.stereotype('pyegg:pymodule'):
+        return
+    module = read_target_node(source, target.target)
+    if module.name == '__init__.py':
+        return
+    if len(module) > 1:
+        return
+    if len(module):
+        bl = module[module.keys()[0]]
+        if bl.lines != get_copyright(source):
+            return
+    del module.parent[module.name]
