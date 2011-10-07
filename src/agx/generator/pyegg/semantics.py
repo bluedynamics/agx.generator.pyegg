@@ -88,7 +88,12 @@ def pyfunctionfromclass(self, source, target):
         function.__name__ = function.uuid
         container.insertlast(function)
     if delmodule:
-        del module.parent[module.name]
+        if len(module) > 2:
+            # XXX: improve -> expects copyright block and function
+            #      check for docstring block by compairing contents
+            del module[str(class_.uuid)]
+        else:
+            del module.parent[module.name]
     else:
         del module[str(class_.uuid)]
     tgv = TaggedValues(source)
