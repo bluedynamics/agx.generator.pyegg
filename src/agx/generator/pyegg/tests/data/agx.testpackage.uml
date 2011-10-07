@@ -45,6 +45,8 @@
         <packagedElement xmi:type="uml:Class" xmi:id="_PCT7QO3yEeCvpoSe_joWQA" name="LaterBaseClass"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_gZ6qQO_1EeC7tul8mqamKw" name="another_function"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_aGSmoPDSEeC2FJWWHfGcuA" name="ClassInEgg"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_gOkMcPDSEeC2FJWWHfGcuA" name="function_in_egg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_X6eI8Id2Ed-UV472qNy5NA" name="StubClass"/>
     <profileApplication xmi:id="_-140Mn7wEd-FrYXmSDxOlg">
@@ -75,4 +77,5 @@
   <pyegg:function xmi:id="_rQfLMO_1EeC7tul8mqamKw" base_Class="_gZ6qQO_1EeC7tul8mqamKw"/>
   <pyegg:decorator xmi:id="_Cce5QPANEeC7tul8mqamKw" base_Class="_gZ6qQO_1EeC7tul8mqamKw" name="function_decorator" args="a" kwargs=""/>
   <pyegg:decorator xmi:id="_1axhAPANEeC7tul8mqamKw" base_Class="_P4thwO_1EeC7tul8mqamKw" name="handler"/>
+  <pyegg:function xmi:id="_klGH0PDSEeC2FJWWHfGcuA" base_Class="_gOkMcPDSEeC2FJWWHfGcuA"/>
 </xmi:XMI>
