@@ -47,10 +47,20 @@ def inheritancesorter(self, source, target):
     """Sort classes in modules by inheritance dependencies.
     """
     def cmp(a, b):
-        if b.classname in a.bases:
-            return 1
-        elif a.classname in b.bases:
-            return -1
+        try:
+            deptok_a=token(str(a.uuid),False,depends_on=set())
+            if b in deptok_a.depends_on:
+                return 1
+        except ComponentLookupError:
+            pass
+        
+        try:
+            deptok_b=token(str(b.uuid),False,depends_on=set())
+            if a in deptok_b.depends_on:
+                return -1
+        except ComponentLookupError:
+            pass
+        
         return 0
     def bubblesort(arr, cmp):
         for j in range(len(arr)):
