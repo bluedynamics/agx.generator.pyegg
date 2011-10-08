@@ -28,7 +28,6 @@ def generalization(self, source, target):
 
     for obj in inheritance.values():
         tok.depends_on.add(read_target_node(obj.context, target.target))
-        print 'inherits->',source.name,obj.context.name
         if not obj.context.name in targetclass.bases:
             targetclass.bases.append(obj.context.name)
             tgv = TaggedValues(obj.context)
