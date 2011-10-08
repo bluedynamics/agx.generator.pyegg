@@ -76,8 +76,13 @@ def eggsetup(self, source, target):
                     'namespace_packages': namespace_packages,
                     'zip_safe': zip_safe,}
     target.anchor['setup.py'] = setup
-
-
+    if 'README.txt' not in target.anchor.keys():
+        readme=JinjaTemplate()
+        readme.template=templatepath('README.txt.jinja')
+        #give it the same params as setup.py
+        readme.params=setup.params
+        target.anchor['README.txt']=readme
+    
 @handler('eggdirectories', 'uml2fs', 'hierarchygenerator',
          'pythonegg', order=20)
 def eggdirectories(self, source, target):

@@ -41,11 +41,14 @@ def inheritanceorder(self, source, target):
         pass
 
 
-@handler('inheritancesorter', 'uml2fs', 'semanticsgenerator', 
+@handler('dependencysorter', 'uml2fs', 'semanticsgenerator', 
          'pymodule', order=30)
-def inheritancesorter(self, source, target):
+def dependencysorter(self, source, target):
     """Sort classes in modules dependencies.
     """
+    module = read_target_node(source, target.target)
+    classes=module.classes()
+
     def cmp(a, b):
         try:
             deptok_a=token(str(a.uuid),False,depends_on=set())
@@ -66,16 +69,9 @@ def inheritancesorter(self, source, target):
         for j in range(len(arr)):
             for i in range(j, len(arr)):
                 if cmp(arr[i], arr[j]) < 0:
-                    tmp = arr[j]
-                    arr[j] = arr[i]
-                    arr[i] = tmp
-    module = read_target_node(source, target.target)
-    classes=module.classes()
-    for cl in classes:
-        module.detach(cl.name)
+                    module.swap(arr[i],arr[j])
+
     bubblesort(classes, cmp)
-    for cl in classes:
-        module.insertlast(cl)
 
 
 @handler('eggemptymoduleremoval', 'uml2fs', 'semanticsgenerator',
