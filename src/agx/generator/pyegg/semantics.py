@@ -44,7 +44,7 @@ def inheritanceorder(self, source, target):
 @handler('inheritancesorter', 'uml2fs', 'semanticsgenerator', 
          'pymodule', order=30)
 def inheritancesorter(self, source, target):
-    """Sort classes in modules by inheritance dependencies.
+    """Sort classes in modules dependencies.
     """
     def cmp(a, b):
         try:
