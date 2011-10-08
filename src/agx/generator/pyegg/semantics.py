@@ -47,7 +47,7 @@ def dependencysorter(self, source, target):
     """Sort classes in modules dependencies.
     """
     module = read_target_node(source, target.target)
-    classes=module.classes()
+    classes=module.values()
 
     def cmp(a, b):
         try:
