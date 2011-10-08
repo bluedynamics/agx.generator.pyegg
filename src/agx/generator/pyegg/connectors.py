@@ -21,8 +21,6 @@ from node.ext.python.utils import Imports
 def generalization(self, source, target):
     """Create generalization.
     """
-    if source.name=='DerivedClass':
-        import pdb;pdb.set_trace()
     inheritance = Inheritance(source)
     targetclass = read_target_node(source, target.target)
     if targetclass:
