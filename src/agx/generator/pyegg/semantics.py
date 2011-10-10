@@ -98,9 +98,6 @@ def emptymoduleremoval(self, source, target):
             continue
         if len(module):
             bl = module[module.keys()[0]]
-            try:
-                if bl.lines != as_comment(get_copyright(source)):
-                    continue
-            except:
-                import pdb;pdb.set_trace()
+            if bl.lines != as_comment(get_copyright(source)):
+                continue
         del module.parent[module.name]
