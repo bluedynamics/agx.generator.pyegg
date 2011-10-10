@@ -163,14 +163,24 @@ def pyclass(self, source, target):
 def pyfunction(self, source, target):
     """Create python functions.
     """
+    def set_args_kwargs(source, function):
+        tgv = TaggedValues(source)
+        _args = tgv.direct('args', 'pyegg:function')
+        _kwargs = tgv.direct('kwargs', 'pyegg:function')
+        if _args is not UNSET:
+            function.s_args = _args
+        if _kwargs is not UNSET:
+            function.s_kwargs = _kwargs
     name = source.name
     container = target.anchor
     if container.functions(name):
         function = container.functions(name)[0]
+        set_args_kwargs(source, function)
         target.finalize(source, function)
         return
     function = python.Function(name)
     container[str(function.uuid)] = function
+    set_args_kwargs(source, function)
     target.finalize(source, function)
 
 
