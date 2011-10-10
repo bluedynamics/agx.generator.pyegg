@@ -1592,4 +1592,10 @@
   <packagedElement xmi:type="uml:Extension" xmi:id="_pwfU4e_xEeCvpoSe_joWQA" name="E_function_Class0" memberEnd="_pwfU4u_xEeCvpoSe_joWQA _pwfU4O_xEeCvpoSe_joWQA">
     <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_pwfU4u_xEeCvpoSe_joWQA" name="extension_function" type="_mH9vAO_xEeCvpoSe_joWQA" aggregation="composite" association="_pwfU4e_xEeCvpoSe_joWQA"/>
   </packagedElement>
+  <profileApplication xmi:id="_3pj6UPJeEeC2t8q-iQDlSQ">
+    <eAnnotations xmi:id="_3pj6UfJeEeC2t8q-iQDlSQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="../../../../../../agx.generator.zca/src/agx/generator/zca/profiles/zca.profile.uml#_xsPnUfJeEeC2t8q-iQDlSQ"/>
+    </eAnnotations>
+    <appliedProfile href="../../../../../../agx.generator.zca/src/agx/generator/zca/profiles/zca.profile.uml#_gTeSUL-VEeCXSLIizrgdww"/>
+  </profileApplication>
 </uml:Profile>

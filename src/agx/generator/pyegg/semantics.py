@@ -88,6 +88,8 @@ def emptymoduleremoval(self, source, target):
         ignores = set()
     for name in directory.keys():
         module = directory[name]
+        if not module.name.endswith('.py'):
+            continue #XXX thats perhaps not the perfect solution to sk
         if IDirectory.providedBy(module) \
           or module.name == '__init__.py' \
           or module in ignores:
@@ -96,6 +98,9 @@ def emptymoduleremoval(self, source, target):
             continue
         if len(module):
             bl = module[module.keys()[0]]
-            if bl.lines != as_comment(get_copyright(source)):
-                continue
+            try:
+                if bl.lines != as_comment(get_copyright(source)):
+                    continue
+            except:
+                import pdb;pdb.set_trace()
         del module.parent[module.name]
