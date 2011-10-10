@@ -473,6 +473,12 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pwhKEu_xEeCvpoSe_joWQA" points="[3, -7, -8, 67]$[3, -99, -8, -25]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pwi_QO_xEeCvpoSe_joWQA" id="(0.55,0.07)"/>
     </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_gkUmoPJqEeC2FJWWHfGcuA" type="1013" source="_mH_kMO_xEeCvpoSe_joWQA" target="_VwT96afhEeCYbMocf1hIjA" lineColor="0">
+      <styles xmi:type="notation:FontStyle" xmi:id="_gkWb0PJqEeC2FJWWHfGcuA" fontName="Ubuntu" fontHeight="10"/>
+      <element xmi:type="uml:Extension" href="pyegg.profile.uml#_gkPHEPJqEeC2FJWWHfGcuA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gkWb0fJqEeC2FJWWHfGcuA" points="[7, -14, -35, 60]$[31, -74, -11, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gkeXoPJqEeC2FJWWHfGcuA" id="(0.8874172185430463,0.1206896551724138)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gkeXofJqEeC2FJWWHfGcuA" id="(0.2546583850931677,0.92)"/>
+    </edges>
   </notation:Diagram>
 </xmi:XMI>
-
