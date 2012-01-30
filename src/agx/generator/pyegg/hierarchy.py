@@ -31,7 +31,8 @@ def eggdocuments(self, source, target):
     """Create egg default documents.
     """
     target = target.anchor
-    package = target['src']
+    if not 'src' in target:
+        target['src'] = Directory()
 
 
 @handler('eggsetup', 'uml2fs', 'hierarchygenerator',
@@ -77,11 +78,11 @@ def eggsetup(self, source, target):
                     'zip_safe': zip_safe,}
     target.anchor['setup.py'] = setup
     if 'README.rst' not in target.anchor.keys():
-        readme=JinjaTemplate()
-        readme.template=templatepath('README.txt.jinja')
+        readme = JinjaTemplate()
+        readme.template = templatepath('README.txt.jinja')
         #give it the same params as setup.py
-        readme.params=setup.params
-        target.anchor['README.rst']=readme
+        readme.params = setup.params
+        target.anchor['README.rst'] = readme
     
 @handler('eggdirectories', 'uml2fs', 'hierarchygenerator',
          'pythonegg', order=20)
@@ -91,6 +92,8 @@ def eggdirectories(self, source, target):
     package = target.anchor['src']
     names = source.name.split('.')    
     for i in range(len(names)):
+        if not names[i] in package:
+            package[names[i]] = Directory()
         package = package[names[i]]
         module = python.Module()
         package['__init__.py'] = module
@@ -116,6 +119,8 @@ def pypackage(self, source, target):
     if not len(target.anchor):
         raise Exception(u"Invalid egg structure. Is ``pyegg`` stereotype "
                         u"applied on root package in UML model?")
+    if not source.name in target.anchor:
+        target.anchor[source.name] = Directory()
     package = target.anchor[source.name]
     module = python.Module()
     package['__init__.py'] = module
