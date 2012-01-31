@@ -1,6 +1,3 @@
-# Copyright BlueDynamics Alliance - http://bluedynamics.com
-# GNU General Public License Version 2
-
 from agx.core import (
     handler,
     token,
@@ -40,29 +37,46 @@ def eggdocuments(self, source, target):
 def eggsetup(self, source, target):
     """Create egg ``setup.py``.
     """
+    root = target.anchor
+    root.factories['setup.py'] = JinjaTemplate
+    
     tgv = TaggedValues(source)
     version = tgv.direct('version', 'pyegg:pyegg', '1.0')
     project = source.name
+    
     cp = tgv.direct('copyright', 'pyegg:pyegg', '')
     cp = cp.split(',')
     cp = [line.strip() for line in cp]
+    
     description = tgv.direct('description', 'pyegg:pyegg', '')
+    
     classifiers = tgv.direct('classifiers', 'pyegg:pyegg', '')
     classifiers = classifiers.split(',')
     classifiers = [cla.strip() for cla in classifiers]
+    
     keywords = tgv.direct('keywords', 'pyegg:pyegg', '')
+    
     author = tgv.direct('author', 'pyegg:pyegg', '')
     author_email = tgv.direct('email', 'pyegg:pyegg', '')
+    
     url = tgv.direct('url', 'pyegg:pyegg', '')
+    
     license_name = tgv.direct('license', 'pyegg:pyegg', '')
+    
     namespace = project.split('.')
     namespace_packages = list()
     if len(namespace) > 1:
         for i in range(len(namespace) - 1):
             namespace_packages.append('"%s"' % '.'.join(namespace[:i + 1]))
     namespace_packages = ', '.join(namespace_packages)
+    
     zip_safe = tgv.direct('zipsafe', 'pyegg:pyegg', 'False')
-    setup = JinjaTemplate()
+    
+    if 'setup.py' in root:
+        setup = root['setup.py']
+    else:
+        setup = JinjaTemplate()
+    
     setup.template = templatepath('setup.py.jinja')
     setup.params = {'cp': cp,
                     'version': version,
@@ -76,14 +90,18 @@ def eggsetup(self, source, target):
                     'license_name': license_name,
                     'namespace_packages': namespace_packages,
                     'zip_safe': zip_safe,}
-    target.anchor['setup.py'] = setup
-    if 'README.rst' not in target.anchor.keys():
-        readme = JinjaTemplate()
-        readme.template = templatepath('README.rst.jinja')
-        #give it the same params as setup.py
-        readme.params = setup.params
-        target.anchor['README.rst'] = readme
     
+    if 'README.rst' in root:
+        readme = root['README.rst']
+    else:
+        readme = JinjaTemplate()
+    
+    readme.template = templatepath('README.rst.jinja')
+    #give it the same params as setup.py
+    readme.params = setup.params
+    root['README.rst'] = readme
+
+
 @handler('eggdirectories', 'uml2fs', 'hierarchygenerator',
          'pythonegg', order=20)
 def eggdirectories(self, source, target):
@@ -105,6 +123,7 @@ def eggdirectories(self, source, target):
                 module['ns_dec'] = block
         else:
             set_copyright(source, module)
+    
     #store all pyeggs in a token
     eggtok = token('pyeggs', True, packages=set(), directories=set())
     eggtok.packages.add(source)
