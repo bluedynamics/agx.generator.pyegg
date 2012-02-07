@@ -66,3 +66,16 @@ def class_base_name(class_):
         ret.append(next)
     ret.reverse()
     return '.'.join(ret)
+
+
+def eggsource(source):
+    """Look up source node representing the python egg.
+    """
+    node = source
+    while True:
+        if node.stereotype('pyegg:pyegg'):
+            break
+        node = node.parent
+        if not node:
+            raise RuntimeError(u"Element mapping to python egg not found.")
+    return node
