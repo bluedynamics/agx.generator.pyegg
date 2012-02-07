@@ -51,11 +51,7 @@ def set_copyright(source, module):
         module.insertbefore(block, values[0])
 
 
-def class_base_name(class_):
-    """Extract base name for Class.
-    """
-    path = class_.path
-    path = path[:len(path) - 1]
+def _module_path(path):
     ret = list()
     while True:
         next = path.pop()
@@ -68,7 +64,21 @@ def class_base_name(class_):
     return '.'.join(ret)
 
 
-def eggsource(source):
+def class_full_name(class_):
+    """Extract full name for Class.
+    """
+    return '%s.%s' % (class_base_name(class_), class_.classname)
+
+
+def class_base_name(class_):
+    """Extract base name for Class.
+    """
+    path = class_.path
+    path = path[:len(path) - 1]
+    return _module_path(path)
+
+
+def egg_source(source):
     """Look up source node representing the python egg.
     """
     node = source
