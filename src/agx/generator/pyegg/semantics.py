@@ -8,10 +8,6 @@ from agx.core import (
 )
 from agx.core.util import read_target_node
 from node.ext.directory.interfaces import IDirectory
-from node.ext.uml.utils import (
-    TaggedValues,
-    UNSET,
-)
 from agx.generator.pyegg.utils import (
     get_copyright,
     as_comment,
