@@ -89,7 +89,8 @@ def eggsetup(self, source, target):
                     'url': url,
                     'license_name': license_name,
                     'namespace_packages': namespace_packages,
-                    'zip_safe': zip_safe,}
+                    'zip_safe': zip_safe,
+                    'setup_dependencies': list()}
     
     if 'README.rst' in root:
         readme = root['README.rst']
