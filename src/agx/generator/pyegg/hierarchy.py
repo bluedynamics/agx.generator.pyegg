@@ -165,8 +165,15 @@ def pymodule(self, source, target):
 def pyclass(self, source, target):
     """Create python classes.
     """
-    if source.stereotype('pyegg:stub') is not None:
+    if source.stereotype('pyegg:stub'):
         return
+    
+    # skip class generation if previous custom handler mark this class as
+    # already handled
+    custom_handled = token('custom_handled_classes', True, classes=list())
+    if source.uuid in custom_handled.classes:
+        return
+    
     name = source.name
     module = target.anchor
     set_copyright(source, module)

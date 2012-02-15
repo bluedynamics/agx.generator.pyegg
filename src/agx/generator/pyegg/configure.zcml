@@ -4,6 +4,16 @@
   <include package="agx.core" />
   <include package="agx.transform.uml2fs" />
   
+  <adapter
+    for="node.ext.uml.interfaces.IInterface"
+    factory="agx.generator.pyegg.treesync.ModuleNameChooser"
+  />
+  
+  <adapter
+    for="node.ext.uml.interfaces.IClass"
+    factory="agx.generator.pyegg.treesync.ModuleNameChooser"
+  />
+  
   <utility
     name="agx.generator.pyegg.profilelocation"
 	provides="agx.core.interfaces.IProfileLocation"
