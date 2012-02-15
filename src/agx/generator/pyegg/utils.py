@@ -3,11 +3,13 @@
 
 import os
 import uuid
+from zope.component.interfaces import ComponentLookupError
 from node.ext import python
 from node.ext.uml.utils import (
     TaggedValues,
     UNSET,
 )
+from agx.core import token
 
 
 def templatepath(name):
@@ -89,3 +91,32 @@ def egg_source(source):
         if not node:
             raise RuntimeError(u"Element mapping to python egg not found.")
     return node
+
+
+def sort_classes_in_module(module):
+    classes = module.values()
+
+    def cmp(a, b):
+        try:
+            deptok_a = token(str(a.uuid), False, depends_on=set())
+            if b in deptok_a.depends_on:
+                return 1
+        except ComponentLookupError:
+            pass
+        
+        try:
+            deptok_b = token(str(b.uuid), False, depends_on=set())
+            if a in deptok_b.depends_on:
+                return -1
+        except ComponentLookupError:
+            pass
+        
+        return 0
+    
+    def bubblesort(arr, cmp):
+        for j in range(len(arr)):
+            for i in range(j, len(arr)):
+                if cmp(arr[i], arr[j]) < 0:
+                    module.swap(arr[i],arr[j])
+
+    bubblesort(classes, cmp)
