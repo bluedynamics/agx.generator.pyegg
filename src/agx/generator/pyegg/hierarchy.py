@@ -25,17 +25,7 @@ from agx.generator.pyegg.utils import (
 @handler('eggdocuments', 'uml2fs', 'hierarchygenerator',
          'pythonegg', order=10)
 def eggdocuments(self, source, target):
-    """Create egg default documents.
-    """
-    target = target.anchor
-    if not 'src' in target:
-        target['src'] = Directory()
-
-
-@handler('eggsetup', 'uml2fs', 'hierarchygenerator',
-         'pythonegg', order=10)
-def eggsetup(self, source, target):
-    """Create egg ``setup.py``.
+    """Create egg ``setup.py`` and default documents.
     """
     root = target.anchor
     root.factories['setup.py'] = JinjaTemplate
@@ -76,6 +66,7 @@ def eggsetup(self, source, target):
         setup = root['setup.py']
     else:
         setup = JinjaTemplate()
+        root['setup.py'] = setup
     
     setup.template = templatepath('setup.py.jinja')
     setup.params = {'cp': cp,
@@ -96,11 +87,28 @@ def eggsetup(self, source, target):
         readme = root['README.rst']
     else:
         readme = JinjaTemplate()
+        root['README.rst'] = readme
     
     readme.template = templatepath('README.rst.jinja')
-    #give it the same params as setup.py
     readme.params = setup.params
-    root['README.rst'] = readme
+    
+    if 'MANIFEST.in' in root:
+        manifest = root['MANIFEST.in']
+    else:
+        manifest = JinjaTemplate()
+        root['MANIFEST.rst'] = manifest
+    
+    manifest.template = templatepath('MANIFEST.in.jinja')
+    manifest.params = {}
+    
+    if 'LICENSE.rst' in root:
+        license = root['LICENSE.rst']
+    else:
+        license = JinjaTemplate()
+        root['LICENSE.rst'] = license
+    
+    license.template = templatepath('LICENSE.rst.jinja')
+    license.params = {}
 
 
 @handler('eggdirectories', 'uml2fs', 'hierarchygenerator',
@@ -108,6 +116,9 @@ def eggsetup(self, source, target):
 def eggdirectories(self, source, target):
     """Create egg directory structure and corresponding ``__init__.py`` files.
     """
+    if not 'src' in target.anchor:
+        target.anchor['src'] = Directory()
+    
     package = target.anchor['src']
     names = source.name.split('.')    
     for i in range(len(names)):
