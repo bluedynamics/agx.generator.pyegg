@@ -120,3 +120,15 @@ def sort_classes_in_module(module):
                     module.swap(arr[i],arr[j])
 
     bubblesort(classes, cmp)
+
+
+def implicit_dotted_path(node):
+    '''returns the dotted python path of an entity, if the entity is a class
+    and not modelled into a module the implicitely created module will be added to the path'''
+    path=node.path
+    pack=node.parent
+    
+    if not pack.stereotype('pyegg:module'):
+        path.insert(-1,node.name.lower())
+        
+    return '.'.join(path[1:])
