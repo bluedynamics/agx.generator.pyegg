@@ -5,7 +5,13 @@ from agx.core import (
     handler,
     token,
 )
-from agx.core.util import read_target_node
+
+from agx.core.util import (
+    read_target_node,                           
+    writesourcepath,
+    write_source_to_target_mapping,
+)
+
 from agx.generator.pyegg.utils import class_base_name
 from node.ext.uml.utils import (
     Inheritance,
@@ -64,6 +70,7 @@ def pyfunctionfromclass(self, source, target):
     """
     if source.stereotype('pyegg:function') is None:
         return
+
     class_ = read_target_node(source, target.target)
     dec_keys = [dec.name for dec in class_.decorators()]
     decorators = [class_.detach(key) for key in dec_keys]
@@ -82,6 +89,11 @@ def pyfunctionfromclass(self, source, target):
         function.__name__ = function.uuid
         container.insertlast(function)
     del module[str(class_.uuid)]
+    
+    #resync target to function, class was deleted
+    writesourcepath(source, function)
+    write_source_to_target_mapping(source, function)
+        
     tgv = TaggedValues(source)
     _args = tgv.direct('args', 'pyegg:function')
     _kwargs = tgv.direct('kwargs', 'pyegg:function')

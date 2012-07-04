@@ -199,6 +199,7 @@ def pyclass(self, source, target):
       and not source.parent.stereotype('pyegg:pymodule'):
         imp = Imports(module.parent['__init__.py'])
         imp.set(class_base_name(class_), [[class_.classname, None]])
+        
     target.finalize(source, class_)
 
 
