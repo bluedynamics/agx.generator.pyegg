@@ -239,7 +239,10 @@ def pydecorator(self, source, target):
     """Create Decorator.
     """
     tgv = TaggedValues(source)
-    name = tgv.direct('name', 'pyegg:decorator')
+    name = tgv.direct('name', 'pyegg:decorator',None)
+    if not name:
+        raise ValueError,'decorator for %s must have a TaggedValue "name"'%\
+            dotted_path(source)
     args = tgv.direct('args', 'pyegg:decorator', None)
     kwargs = tgv.direct('kwargs', 'pyegg:decorator', None)
     container = read_target_node(source, target.target)
