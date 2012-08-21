@@ -188,7 +188,13 @@ def pyclass(self, source, target):
     
     name = source.name
     module = target.anchor
-    set_copyright(source, module)
+    try:
+        set_copyright(source, module)
+    except AttributeError:
+        raise ValueError, \
+            'Package "%s" must have either <<pymodule>> or <<pypackage>> stereotype'\
+             % dotted_path(module)
+        
     if module.classes(name):
         class_ = module.classes(name)[0]
         target.finalize(source, class_)
