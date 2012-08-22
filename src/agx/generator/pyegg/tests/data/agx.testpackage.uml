@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:pyegg="http:///schemas/pyegg/_m3LEwPJqEeC2FJWWHfGcuA/17" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/pyegg/_m3LEwPJqEeC2FJWWHfGcuA/17 ../../profiles/pyegg.profile.uml#_m3OIEPJqEeC2FJWWHfGcuA">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:pyegg="http:///schemas/pyegg/_nV0YQOwjEeGAlMENIKRJsg/18" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xsi:schemaLocation="http:///schemas/pyegg/_nV0YQOwjEeGAlMENIKRJsg/18 ../../profiles/pyegg.profile.uml#_nV0_UOwjEeGAlMENIKRJsg">
   <uml:Model xmi:id="_-140MH7wEd-FrYXmSDxOlg" name="agx.testpackage">
     <packageImport xmi:id="_-140MX7wEd-FrYXmSDxOlg">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -57,7 +57,7 @@
     </profileApplication>
     <profileApplication xmi:id="_FrZTcH7xEd-FrYXmSDxOlg">
       <eAnnotations xmi:id="_FreL8H7xEd-FrYXmSDxOlg" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../../profiles/pyegg.profile.uml#_m3OIEPJqEeC2FJWWHfGcuA"/>
+        <references xmi:type="ecore:EPackage" href="../../profiles/pyegg.profile.uml#_nV0_UOwjEeGAlMENIKRJsg"/>
       </eAnnotations>
       <appliedProfile href="../../profiles/pyegg.profile.uml#_HHBJsNqqEd6cif0axL0c4w"/>
     </profileApplication>
@@ -79,4 +79,7 @@
   <pyegg:decorator xmi:id="_1axhAPANEeC7tul8mqamKw" base_Class="_P4thwO_1EeC7tul8mqamKw" name="handler"/>
   <pyegg:function xmi:id="_klGH0PDSEeC2FJWWHfGcuA" base_Class="_gOkMcPDSEeC2FJWWHfGcuA"/>
   <pyegg:function xmi:id="_H-Lh4PJrEeC2FJWWHfGcuA" args="a, b" kwargs="c=None, d=None" base_Operation="_i9kLAH8HEd-FrYXmSDxOlg"/>
+  <pyegg:api xmi:id="_4QzSsOwjEeGAlMENIKRJsg" base_Class="_Zz2p8H8GEd-FrYXmSDxOlg"/>
+  <pyegg:api xmi:id="_-HUaIOwjEeGAlMENIKRJsg" base_Class="_dLYmcH8GEd-FrYXmSDxOlg"/>
+  <pyegg:api xmi:id="_Cjj78OwkEeGAlMENIKRJsg" base_Class="_jNgg8H8GEd-FrYXmSDxOlg"/>
 </xmi:XMI>

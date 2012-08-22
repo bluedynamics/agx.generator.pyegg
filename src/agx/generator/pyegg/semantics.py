@@ -12,8 +12,12 @@ from agx.generator.pyegg.utils import (
     get_copyright,
     as_comment,
     sort_classes_in_module,
+    egg_source,
+    class_base_name,
+    class_full_name,
 )
 
+from node.ext.python.utils import Imports
 
 @handler('inheritanceorder', 'uml2fs', 'semanticsgenerator',
          'pyclass', order=10)
@@ -74,3 +78,16 @@ def emptymoduleremoval(self, source, target):
             if bl.lines != as_comment(get_copyright(source)):
                 continue
         del module.parent[module.name]
+        
+@handler('apiexporter', 'uml2fs', 'semanticsgenerator',
+         'api' )
+def apiexporter(self, source,target):
+    '''takes classes with 'api' stereotype and imports them into 
+    the pyegg's __init__.py'''
+    
+    egg=egg_source(source)
+    targetegg=read_target_node(egg, target.target)
+    init=targetegg['__init__.py']
+    imps=Imports(init)
+    klass=read_target_node(source, target.target)
+    imps.set(class_base_name(klass),[[klass.classname,None]])

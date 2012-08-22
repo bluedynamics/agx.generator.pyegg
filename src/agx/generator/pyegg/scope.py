@@ -57,6 +57,13 @@ class DecoratorScope(PackageScope):
             return False
         return True
 
+class ApiScope(PackageScope):
+    
+    def __call__(self, node):
+        if node.stereotype('pyegg:api') is None:
+            return False
+        return True
+
 
 registerScope('pythonegg', 'uml2fs', None, EggScope)
 registerScope('pypackage', 'uml2fs', None, PackageScope)
@@ -66,3 +73,4 @@ registerScope('pyfunction', 'uml2fs', [IOperation], Scope)
 registerScope('pydecorator', 'uml2fs', None, DecoratorScope)
 registerScope('pyattribute', 'uml2fs', [IProperty], Scope)
 registerScope('generalization', 'uml2fs', [IGeneralization], Scope)
+registerScope('api', 'uml2fs', None, ApiScope)
