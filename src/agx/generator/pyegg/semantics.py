@@ -90,4 +90,4 @@ def apiexporter(self, source,target):
     init=targetegg['__init__.py']
     imps=Imports(init)
     klass=read_target_node(source, target.target)
-    imps.set(class_base_name(klass),[[klass.classname,None]])
+    imps.set(class_base_name(klass),[[source.name,None]])
