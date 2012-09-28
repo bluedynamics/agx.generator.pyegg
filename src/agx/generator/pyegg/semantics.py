@@ -18,6 +18,7 @@ from agx.generator.pyegg.utils import (
 )
 
 from node.ext.python.utils import Imports
+from node.ext.python.interfaces import IFunction
 
 @handler('inheritanceorder', 'uml2fs', 'semanticsgenerator',
          'pyclass', order=10)
@@ -75,6 +76,8 @@ def emptymoduleremoval(self, source, target):
             continue
         if len(module):
             bl = module[module.keys()[0]]
+            if IFunction.providedBy(bl):
+               continue 
             if bl.lines != as_comment(get_copyright(source)):
                 continue
         del module.parent[module.name]
