@@ -179,11 +179,11 @@ def pyclass(self, source, target):
     """
     if source.stereotype('pyegg:stub'):
         return
-    
     # skip class generation if previous custom handler mark this class as
     # already handled
     custom_handled = token('custom_handled_classes', True, classes=list())
-    if source.uuid in custom_handled.classes:
+    handled_classes=[str(uuid) for uuid in custom_handled.classes]
+    if str(source.uuid) in handled_classes:
         return
     
     name = source.name
