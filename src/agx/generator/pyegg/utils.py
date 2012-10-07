@@ -132,3 +132,13 @@ def implicit_dotted_path(node):
         path.insert(-1,node.name.lower())
         
     return '.'.join(path[1:])
+
+def is_class_a_function(klass):
+    if klass.stereotype('pyegg:function'):
+        return True
+    try:
+        tok=token(str(klass.uuid),False,is_function=False)
+        if tok.is_function:
+            return True
+    except ComponentLookupError:
+        pass

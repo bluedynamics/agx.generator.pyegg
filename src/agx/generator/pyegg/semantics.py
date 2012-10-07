@@ -52,9 +52,9 @@ def dependencysorter(self, source, target):
     sort_classes_in_module(module)
 
 
-@handler('eggemptymoduleremoval', 'uml2fs', 'semanticsgenerator',
+@handler('eggemptymoduleremoval', 'uml2fs', 'cleanupgenerator',
          'pythonegg', order=40)
-@handler('packageemptymoduleremoval', 'uml2fs', 'semanticsgenerator',
+@handler('packageemptymoduleremoval', 'uml2fs', 'cleanupgenerator',
          'pypackage', order=40)
 def emptymoduleremoval(self, source, target):
     directory = read_target_node(source, target.target)
@@ -94,3 +94,5 @@ def apiexporter(self, source,target):
     imps=Imports(init)
     klass=read_target_node(source, target.target)
     imps.set(class_base_name(klass),[[source.name,None]])
+    
+

@@ -12,7 +12,10 @@ from agx.core.util import (
     write_source_to_target_mapping,
 )
 
-from agx.generator.pyegg.utils import class_base_name
+from agx.generator.pyegg.utils import (
+    class_base_name,
+    is_class_a_function,
+    )
 from node.ext.uml.utils import (
     Inheritance,
     TaggedValues,
@@ -68,7 +71,7 @@ def inheritancetokenizer(self, source, target):
 def pyfunctionfromclass(self, source, target):
     """Convert Class to function if class has stereotype function set.
     """
-    if source.stereotype('pyegg:function') is None:
+    if not is_class_a_function(source):
         return
 
     class_ = read_target_node(source, target.target)

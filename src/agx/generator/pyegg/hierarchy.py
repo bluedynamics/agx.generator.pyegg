@@ -19,6 +19,7 @@ from node.ext.python.utils import Imports
 from agx.generator.pyegg.utils import (
     templatepath,
     set_copyright,
+    is_class_a_function,
 )
 
 
@@ -201,7 +202,7 @@ def pyclass(self, source, target):
         return
     class_ = python.Class(name)
     module[str(class_.uuid)] = class_
-    if not source.stereotype('pyegg:function') \
+    if not is_class_a_function(source) \
       and not source.parent.stereotype('pyegg:pymodule'):
         imp = Imports(module.parent['__init__.py'])
         imp.set(class_base_name(class_), [[class_.classname, None]])
