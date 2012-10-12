@@ -1,11 +1,13 @@
 # Copyright BlueDynamics Alliance - http://bluedynamics.com
 # GNU General Public License Version 2
 
+from zope.component import getUtility
 from zope.component.interfaces import ComponentLookupError
 from agx.core import (
     handler,
     token,
 )
+from agx.core.interfaces import IScope
 from agx.core.util import read_target_node
 from node.ext.directory.interfaces import IDirectory
 from agx.generator.pyegg.utils import (
@@ -15,6 +17,7 @@ from agx.generator.pyegg.utils import (
     egg_source,
     class_base_name,
     class_full_name,
+    implicit_dotted_path,
 )
 
 from node.ext.python.utils import Imports
@@ -95,4 +98,14 @@ def apiexporter(self, source,target):
     klass=read_target_node(source, target.target)
     imps.set(class_base_name(klass),[[source.name,None]])
     
+@handler('autoimport', 'uml2fs', 'semanticsgenerator',
+         'autoimport' )
+def autoimport(self, source,target):
+    '''takes classes with 'api' stereotype and imports them into 
+    the pyegg's __init__.py'''
+    
+    targetob=read_target_node(source,target.target)
+    init=targetob.parent['__init__.py']
+    imps=Imports(init)
+    imps.set(None,[[source.name,None]])
 

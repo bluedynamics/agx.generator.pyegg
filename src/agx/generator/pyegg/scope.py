@@ -64,6 +64,12 @@ class ApiScope(PackageScope):
             return False
         return True
 
+class AutoimportScope(PackageScope):
+    
+    def __call__(self, node):
+        if node.stereotype('pyegg:autoimport') is None:
+            return False
+        return True
 
 registerScope('pythonegg', 'uml2fs', None, EggScope)
 registerScope('pypackage', 'uml2fs', None, PackageScope)
@@ -74,3 +80,4 @@ registerScope('pydecorator', 'uml2fs', None, DecoratorScope)
 registerScope('pyattribute', 'uml2fs', [IProperty], Scope)
 registerScope('generalization', 'uml2fs', [IGeneralization], Scope)
 registerScope('api', 'uml2fs', None, ApiScope)
+registerScope('autoimport', 'uml2fs', [IPackage], AutoimportScope)
