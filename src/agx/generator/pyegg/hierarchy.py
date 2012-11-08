@@ -30,45 +30,45 @@ def eggdocuments(self, source, target):
     """
     root = target.anchor
     root.factories['setup.py'] = JinjaTemplate
-    
+
     tgv = TaggedValues(source)
     version = tgv.direct('version', 'pyegg:pyegg', '1.0')
     project = source.name
-    
+
     cp = tgv.direct('copyright', 'pyegg:pyegg', '')
     cp = cp.split(',')
     cp = [line.strip() for line in cp]
-    
+
     description = tgv.direct('description', 'pyegg:pyegg', '')
-    
+
     classifiers = tgv.direct('classifiers', 'pyegg:pyegg', '')
     classifiers = classifiers.split(',')
     classifiers = [cla.strip() for cla in classifiers]
-    
+
     keywords = tgv.direct('keywords', 'pyegg:pyegg', '')
-    
+
     author = tgv.direct('author', 'pyegg:pyegg', '')
     author_email = tgv.direct('email', 'pyegg:pyegg', '')
-    
+
     url = tgv.direct('url', 'pyegg:pyegg', '')
-    
+
     license_name = tgv.direct('license', 'pyegg:pyegg', '')
-    
+
     namespace = project.split('.')
     namespace_packages = list()
     if len(namespace) > 1:
         for i in range(len(namespace) - 1):
             namespace_packages.append('"%s"' % '.'.join(namespace[:i + 1]))
     namespace_packages = ', '.join(namespace_packages)
-    
+
     zip_safe = tgv.direct('zipsafe', 'pyegg:pyegg', 'False')
-    
+
     if 'setup.py' in root:
         setup = root['setup.py']
     else:
         setup = JinjaTemplate()
         root['setup.py'] = setup
-    
+
     setup.template = templatepath('setup.py.jinja')
     setup.params = {'cp': cp,
                     'version': version,
@@ -83,31 +83,31 @@ def eggdocuments(self, source, target):
                     'namespace_packages': namespace_packages,
                     'zip_safe': zip_safe,
                     'setup_dependencies': list()}
-    
+
     if 'README.rst' in root:
         readme = root['README.rst']
     else:
         readme = JinjaTemplate()
         root['README.rst'] = readme
-    
+
     readme.template = templatepath('README.rst.jinja')
     readme.params = setup.params
-    
+
     if 'MANIFEST.in' in root:
         manifest = root['MANIFEST.in']
     else:
         manifest = JinjaTemplate()
         root['MANIFEST.rst'] = manifest
-    
+
     manifest.template = templatepath('MANIFEST.in.jinja')
     manifest.params = {}
-    
+
     if 'LICENSE.rst' in root:
         license = root['LICENSE.rst']
     else:
         license = JinjaTemplate()
         root['LICENSE.rst'] = license
-    
+
     license.template = templatepath('LICENSE.rst.jinja')
     license.params = {}
 
@@ -119,9 +119,9 @@ def eggdirectories(self, source, target):
     """
     if not 'src' in target.anchor:
         target.anchor['src'] = Directory()
-    
+
     package = target.anchor['src']
-    names = source.name.split('.')    
+    names = source.name.split('.')
     for i in range(len(names)):
         if not names[i] in package:
             package[names[i]] = Directory()
@@ -136,7 +136,7 @@ def eggdirectories(self, source, target):
                 module['ns_dec'] = block
         else:
             set_copyright(source, module)
-    
+
     #store all pyeggs in a token
     eggtok = token('pyeggs', True, packages=set(), directories=set())
     eggtok.packages.add(source)
@@ -183,19 +183,19 @@ def pyclass(self, source, target):
     # skip class generation if previous custom handler mark this class as
     # already handled
     custom_handled = token('custom_handled_classes', True, classes=list())
-    handled_classes=[str(uuid) for uuid in custom_handled.classes]
+    handled_classes = [str(uuid) for uuid in custom_handled.classes]
     if str(source.uuid) in handled_classes:
         return
-    
+
     name = source.name
     module = target.anchor
     try:
         set_copyright(source, module)
     except AttributeError:
         raise ValueError, \
-            'Package "%s" must have either <<pymodule>> or <<pypackage>> stereotype'\
+    'Package "%s" must have either <<pymodule>> or <<pypackage>> stereotype'\
              % dotted_path(module)
-        
+
     if module.classes(name):
         class_ = module.classes(name)[0]
         target.finalize(source, class_)
@@ -206,7 +206,7 @@ def pyclass(self, source, target):
       and not source.parent.stereotype('pyegg:pymodule'):
         imp = Imports(module.parent['__init__.py'])
         imp.set(class_base_name(class_), [[class_.classname, None]])
-        
+
     target.finalize(source, class_)
 
 
@@ -235,14 +235,15 @@ def pyfunction(self, source, target):
     target.finalize(source, function)
 
 
-@handler('pydecorator', 'uml2fs', 'hierarchygenerator', 'pydecorator', order=40)
+@handler('pydecorator', 'uml2fs',
+         'hierarchygenerator', 'pydecorator', order=40)
 def pydecorator(self, source, target):
     """Create Decorator.
     """
     tgv = TaggedValues(source)
-    name = tgv.direct('name', 'pyegg:decorator',None)
+    name = tgv.direct('name', 'pyegg:decorator', None)
     if not name:
-        raise ValueError,'decorator for %s must have a TaggedValue "name"'%\
+        raise ValueError, 'decorator for %s must have a TaggedValue "name"' % \
             dotted_path(source)
     args = tgv.direct('args', 'pyegg:decorator', None)
     kwargs = tgv.direct('kwargs', 'pyegg:decorator', None)
@@ -258,7 +259,8 @@ def pydecorator(self, source, target):
         decorator.s_kwargs = kwargs
 
 
-@handler('pyattribute', 'uml2fs', 'hierarchygenerator', 'pyattribute', order=40)
+@handler('pyattribute', 'uml2fs',
+         'hierarchygenerator', 'pyattribute', order=40)
 def pyattribute(self, source, target):
     """Create Attribute.
     """
@@ -273,7 +275,7 @@ def pyattribute(self, source, target):
             attribute.value = expression
         target.finalize(source, attribute)
         return
-    value = expression is not None and expression or 'None' 
+    value = expression is not None and expression or 'None'
     attribute = python.Attribute([name], value=value)
     container[str(attribute.uuid)] = attribute
     target.finalize(source, attribute)
