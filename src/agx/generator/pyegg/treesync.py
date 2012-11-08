@@ -17,7 +17,7 @@ from node.ext.python import Module
 
 
 class IModuleNameChooser(Interface):
-    
+
     def __call__():
         """Create real module name
         """
@@ -25,16 +25,16 @@ class IModuleNameChooser(Interface):
 
 class ModuleNameChooser(object):
     implements(IModuleNameChooser)
-    
+
     def __init__(self, context):
         self.context = context
-    
+
     def __call__(self):
         return self.context.name.lower()
 
 
 class PackageSyncer(TreeSyncPreperator):
-    
+
     def __call__(self, source):
         super(PackageSyncer, self).__call__(source)
         if (IClass.providedBy(source) or IInterface.providedBy(source)) \
