@@ -16,7 +16,7 @@ from node.ext.uml.interfaces import (
 
 
 class PackageScope(Scope):
-    
+
     def __init__(self, name, interfaces):
         self.name = name
         self.interfaces = [IPackage]
@@ -31,7 +31,7 @@ class PackageScope(Scope):
 
 
 class EggScope(PackageScope):
-    
+
     def __call__(self, node):
         if not Scope.__call__(self, node) \
           or IModel.providedBy(node) \
@@ -41,7 +41,7 @@ class EggScope(PackageScope):
 
 
 class ModuleScope(PackageScope):
-    
+
     def __call__(self, node):
         if not Scope.__call__(self, node) \
           or IModel.providedBy(node) \
@@ -51,14 +51,15 @@ class ModuleScope(PackageScope):
 
 
 class DecoratorScope(PackageScope):
-    
+
     def __call__(self, node):
         if node.stereotype('pyegg:decorator') is None:
             return False
         return True
 
+
 class ApiScope(PackageScope):
-    
+
     def __call__(self, node):
         if node.stereotype('pyegg:api') is None:
             return False
