@@ -23,6 +23,7 @@ from agx.generator.pyegg.utils import (
 from node.ext.python.utils import Imports
 from node.ext.python.interfaces import IFunction
 
+
 @handler('inheritanceorder', 'uml2fs', 'semanticsgenerator',
          'pyclass', order=10)
 def inheritanceorder(self, source, target):
@@ -46,7 +47,7 @@ def inheritanceorder(self, source, target):
         pass
 
 
-@handler('dependencysorter', 'uml2fs', 'semanticsgenerator', 
+@handler('dependencysorter', 'uml2fs', 'semanticsgenerator',
          'pymodule', order=30)
 def dependencysorter(self, source, target):
     """Sort classes in modules dependencies.
@@ -70,7 +71,7 @@ def emptymoduleremoval(self, source, target):
     for name in directory.keys():
         module = directory[name]
         if not module.name.endswith('.py'):
-            continue #XXX thats perhaps not the perfect solution to sk
+            continue  # XXX thats perhaps not the perfect solution to sk
         if IDirectory.providedBy(module) \
           or module.name == '__init__.py' \
           or module in ignores:
@@ -80,32 +81,41 @@ def emptymoduleremoval(self, source, target):
         if len(module):
             bl = module[module.keys()[0]]
             if IFunction.providedBy(bl):
-               continue 
+                continue
             if bl.lines != as_comment(get_copyright(source)):
                 continue
         del module.parent[module.name]
-        
-@handler('apiexporter', 'uml2fs', 'semanticsgenerator',
-         'api' )
-def apiexporter(self, source,target):
-    '''takes classes with 'api' stereotype and imports them into 
-    the pyegg's __init__.py'''
-    
-    egg=egg_source(source)
-    targetegg=read_target_node(egg, target.target)
-    init=targetegg['__init__.py']
-    imps=Imports(init)
-    klass=read_target_node(source, target.target)
-    imps.set(class_base_name(klass),[[source.name,None]])
-    
-@handler('autoimport', 'uml2fs', 'semanticsgenerator',
-         'autoimport' )
-def autoimport(self, source,target):
-    '''takes classes with 'api' stereotype and imports them into 
-    the pyegg's __init__.py'''
-    
-    targetob=read_target_node(source,target.target)
-    init=targetob.parent['__init__.py']
-    imps=Imports(init)
-    imps.set(None,[[source.name,None]])
 
+
+@handler('apiexporter', 'uml2fs', 'semanticsgenerator',
+         'api')
+def apiexporter(self, source, target):
+    '''takes classes with 'api' stereotype and imports them into
+    the pyeggs __init__.py
+    '''
+
+    egg = egg_source(source)
+    targetegg = read_target_node(egg, target.target)
+    init = targetegg['__init__.py']
+    imps = Imports(init)
+    klass = read_target_node(source, target.target)
+    imps.set(class_base_name(klass), [[source.name, None]])
+
+
+@handler('autoimport', 'uml2fs', 'semanticsgenerator',
+         'autoimport')
+def autoimport(self, source, target):
+    '''takes classes with 'api' stereotype and imports them into
+    the pyeggs __init__.py'''
+
+    targetob = read_target_node(source, target.target)
+    init = targetob.parent['__init__.py']
+    imps = Imports(init)
+    imps.set(None, [[source.name, None]])
+
+    egg = egg_source(source)
+    targetegg = read_target_node(egg, target.target)
+    init = targetegg['__init__.py']
+    imps = Imports(init)
+    klass = read_target_node(source, target.target)
+    imps.set(class_base_name(klass), [[source.name, None]])
