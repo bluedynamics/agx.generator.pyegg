@@ -103,41 +103,44 @@ def sort_classes_in_module(module):
                 return 1
         except ComponentLookupError:
             pass
-        
+
         try:
             deptok_b = token(str(b.uuid), False, depends_on=set())
             if a in deptok_b.depends_on:
                 return -1
         except ComponentLookupError:
             pass
-        
+
         return 0
-    
+
     def bubblesort(arr, cmp):
         for j in range(len(arr)):
             for i in range(j, len(arr)):
                 if cmp(arr[i], arr[j]) < 0:
-                    module.swap(arr[i],arr[j])
+                    module.swap(arr[i], arr[j])
 
     bubblesort(classes, cmp)
 
 
 def implicit_dotted_path(node):
     '''returns the dotted python path of an entity, if the entity is a class
-    and not modelled into a module the implicitely created module will be added to the path'''
-    path=node.path
-    pack=node.parent
-    
+    and not modelled into a module the implicitely created module
+    will be added to the path'''
+    # XXX that docstring has some bad grammar. ',' -> '.' ?!? two sentences?
+    path = node.path
+    pack = node.parent
+
     if not pack.stereotype('pyegg:module'):
-        path.insert(-1,node.name.lower())
-        
+        path.insert(-1, node.name.lower())
+
     return '.'.join(path[1:])
+
 
 def is_class_a_function(klass):
     if klass.stereotype('pyegg:function'):
         return True
     try:
-        tok=token(str(klass.uuid),False,is_function=False)
+        tok = token(str(klass.uuid), False, is_function=False)
         if tok.is_function:
             return True
     except ComponentLookupError:
