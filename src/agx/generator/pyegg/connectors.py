@@ -7,7 +7,7 @@ from agx.core import (
 )
 
 from agx.core.util import (
-    read_target_node,                           
+    read_target_node,
     writesourcepath,
     write_source_to_target_mapping,
 )
@@ -33,7 +33,7 @@ def generalization(self, source, target):
     inheritance = Inheritance(source)
     targetclass = read_target_node(source, target.target)
     if targetclass:
-        tok=token(str(targetclass.uuid),True,depends_on=set())
+        tok = token(str(targetclass.uuid), True, depends_on=set())
 
     for obj in inheritance.values():
         tok.depends_on.add(read_target_node(obj.context, target.target))
@@ -92,11 +92,11 @@ def pyfunctionfromclass(self, source, target):
         function.__name__ = function.uuid
         container.insertlast(function)
     del module[str(class_.uuid)]
-    
+
     #resync target to function, class was deleted
     writesourcepath(source, function)
     write_source_to_target_mapping(source, function)
-        
+
     tgv = TaggedValues(source)
     _args = tgv.direct('args', 'pyegg:function')
     _kwargs = tgv.direct('kwargs', 'pyegg:function')
