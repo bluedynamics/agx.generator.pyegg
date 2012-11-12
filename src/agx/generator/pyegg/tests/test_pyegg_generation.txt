@@ -117,10 +117,10 @@ Check for the existence of generated files and directories:
 Check if we can delete something that has been generated...
 
 
-#    >>> if os.path.exists(os.path.join(datadir, 'agx.testpackage')):
-#    ...     shutil.rmtree(os.path.join(datadir, 'agx.testpackage'))
-#    ...     print("deleted generated code")
-#    deleted generated code
+    >>> if os.path.exists(os.path.join(datadir, 'agx.testpackage')):
+    ...     shutil.rmtree(os.path.join(datadir, 'agx.testpackage'))
+    ...     print("deleted generated code")
+    deleted generated code
 
 
 And that files were really deleted.
