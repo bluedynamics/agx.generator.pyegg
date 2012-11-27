@@ -103,9 +103,9 @@ def apiexporter(self, source,target):
 def autoimport(self, source,target):
     '''takes classes with 'api' stereotype and imports them into 
     the pyegg's __init__.py'''
-    
+
     targetob=read_target_node(source,target.target)
-    init=targetob.parent['__init__.py']
+    init=targetob.parent.parent['__init__.py']
     imps=Imports(init)
     imps.set(None,[[source.name,None]])
 
