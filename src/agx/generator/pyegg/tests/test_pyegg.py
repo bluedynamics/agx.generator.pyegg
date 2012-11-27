@@ -14,9 +14,11 @@ optionflags = doctest.NORMALIZE_WHITESPACE | \
 
 TESTFILES = [
     'test_pyegg.txt',
+    'test_pyegg_generation.txt',
 ]
 
 datadir = os.path.join(os.path.dirname(__file__), 'data')
+
 
 def test_suite():
     return unittest.TestSuite([

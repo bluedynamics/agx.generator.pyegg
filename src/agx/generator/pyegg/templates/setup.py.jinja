@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 import sys, os
 
 version = "{{version}}"
-shortdesc ="{{description}}"
+shortdesc = "{{description}}"
 longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
 setup(name="{{project}}",
@@ -30,7 +30,7 @@ setup(name="{{project}}",
           ##code-section dependencies
           ##/code-section dependencies
       ],
-      extras_require = dict(
+      extras_require=dict(
           ##code-section extras_require
           ##/code-section extras_require
       ),
