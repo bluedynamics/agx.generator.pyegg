@@ -262,6 +262,8 @@ def pydecorator(self, source, target):
 def pyattribute(self, source, target):
     """Create Attribute.
     """
+    if source.parent.stereotype('pyegg:stub'):
+        return
     expression = None
     tgv = TaggedValues(source)
     expression = tgv.direct('expression', 'pyegg:expression', None)
