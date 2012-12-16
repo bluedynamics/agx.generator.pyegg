@@ -22,6 +22,7 @@ from agx.generator.pyegg.utils import (
 
 from node.ext.python.utils import Imports
 from node.ext.python.interfaces import IFunction
+from node.ext.template.interfaces import ITemplate
 
 @handler('inheritanceorder', 'uml2fs', 'semanticsgenerator',
          'pyclass', order=10)
@@ -83,6 +84,11 @@ def emptymoduleremoval(self, source, target):
                continue 
             if bl.lines != as_comment(get_copyright(source)):
                 continue
+        
+        #dont throw away templates
+        if ITemplate.providedBy(module) and module.template:
+            continue
+        
         del module.parent[module.name]
         
 @handler('apiexporter', 'uml2fs', 'semanticsgenerator',
