@@ -80,7 +80,7 @@ This time we generate some code:
     >>> err
 
     >>> out
-    'INFO  AGX 3.0-dev - (c) BlueDynamics Alliance, http://bluedynamics.com, GPL 2\nINFO  Generator run took ... sec.\n'
+    'INFO  AGX 3.0-dev - (c) BlueDynamics Alliance, http://bluedynamics.com, GPL 2\nINFO  Generator ... sec.\n'
 
 
 Check for the existence of generated files and directories:
