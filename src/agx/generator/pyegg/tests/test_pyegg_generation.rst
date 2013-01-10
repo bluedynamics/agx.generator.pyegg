@@ -58,10 +58,8 @@ Now we spin up the generator and check the help output::
     True
 
     >>> import subprocess
-    >>> subprocess.Popen([agx_bin, '-h'], stdout=subprocess.PIPE).communicate()
     >>> out, err = subprocess.Popen([agx_bin, '-h'], stdout=subprocess.PIPE).communicate()
     >>> err
-
     >>> out
     'Usage: agx UMLFILE options\n\nOptions:\n  -h, --help            show this help message and exit\n  -o /target/path, --output-directory=/target/path\n                        Write generated code to TARGET\n  -p /path/to/profile1.uml;/path/to/profile2.uml, --profiles=/path/to/profile1.uml;/path/to/profile2.uml\n                        Comma seperated Paths to profile file(s)\n  -e profilename1;profilename2, --export-profiles=profilename1;profilename2\n                        Comma seperated profile names to export for model\n  -l, --listprofiles    List of available profiles\n  -i, --info            AGX Version and flavour info.\n  -d, --debug           Additional output of debug information.\n  -m, --postmortem      Enable postmortem debugger.\n'
 
@@ -73,7 +71,6 @@ This time we generate some code::
 ::
     >>> out, err = subprocess.Popen([agx_bin, model_uml, '-p', profiles, '-o', output_dir], stdout=subprocess.PIPE).communicate()
     >>> err
-
     >>> out
     'INFO  AGX 3.0-dev - (c) BlueDynamics Alliance, http://bluedynamics.com, GPL 2\nINFO  Generator ... sec.\n'
 

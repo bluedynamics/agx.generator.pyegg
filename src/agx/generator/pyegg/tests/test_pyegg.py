@@ -14,7 +14,7 @@ optionflags = doctest.NORMALIZE_WHITESPACE | \
 
 TESTFILES = [
     'test_pyegg.rst',
-#    'test_pyegg_generation.rst',
+    'test_pyegg_generation.rst',
 ]
 
 datadir = os.path.join(os.path.dirname(__file__), 'data')
