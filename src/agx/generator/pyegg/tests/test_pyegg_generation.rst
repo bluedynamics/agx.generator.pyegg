@@ -14,9 +14,7 @@ Todo:
 - what if we want the generated code to remain on the file system? flag/variable?
 - test re-generation over generated code after model change
 
-
-We would like to start with a fresh setup, no generated files. We delete them.
-::
+We would like to start with a fresh setup, no generated files. We delete them::
 
     >>> import os
     >>> import shutil
@@ -29,12 +27,11 @@ We would like to start with a fresh setup, no generated files. We delete them.
     >>> 1+1
     2
 
-Some configuration settings for what is to come
-::
+Some configuration settings for what is to come::
 
     >>> base_path = os.path.abspath(
     ...    os.path.join(datadir, '..', '..', '..', '..', '..', '..', '..', '..')) + os.sep
-    >>> agx_bin = os.path.join(base_path, 'bin', 'agx') 
+    >>> agx_bin = os.path.join(base_path, 'bin', 'agx')
     >>> pyegg_path = os.path.join('devsrc', 'agx.generator.pyegg', 'src', 'agx', 'generator', 'pyegg')
     >>> model_uml = os.path.join(base_path, pyegg_path, 'tests', 'data', 'agx.testpackage.uml')
     >>> pp = os.path.join(pyegg_path, 'profiles', 'pyegg.profile.uml')
@@ -55,35 +52,32 @@ Some configuration settings for what is to come
     '...agx.dev/devsrc/agx.generator.pyegg/src/agx/generator/pyegg/profiles/pyegg.profile.uml'
 
 
-Now we spin up the generator and check the help output:
-::
+Now we spin up the generator and check the help output::
+
+    >>> os.path.exists(agx_bin)
+    True
 
     >>> import subprocess
+    >>> subprocess.Popen([agx_bin, '-h'], stdout=subprocess.PIPE).communicate()
     >>> out, err = subprocess.Popen([agx_bin, '-h'], stdout=subprocess.PIPE).communicate()
     >>> err
 
     >>> out
     'Usage: agx UMLFILE options\n\nOptions:\n  -h, --help            show this help message and exit\n  -o /target/path, --output-directory=/target/path\n                        Write generated code to TARGET\n  -p /path/to/profile1.uml;/path/to/profile2.uml, --profiles=/path/to/profile1.uml;/path/to/profile2.uml\n                        Comma seperated Paths to profile file(s)\n  -e profilename1;profilename2, --export-profiles=profilename1;profilename2\n                        Comma seperated profile names to export for model\n  -l, --listprofiles    List of available profiles\n  -i, --info            AGX Version and flavour info.\n  -d, --debug           Additional output of debug information.\n  -m, --postmortem      Enable postmortem debugger.\n'
 
-
-    >>> 3+4
-    7
-
-
-This time we generate some code:
-::
+This time we generate some code::
 
 #    >>> str(subprocess.check_output([agx_bin, model_uml]))
 #    this will leave it spin for a while. needs fixing. XXX
 
+::
     >>> out, err = subprocess.Popen([agx_bin, model_uml, '-p', profiles, '-o', output_dir], stdout=subprocess.PIPE).communicate()
     >>> err
 
     >>> out
     'INFO  AGX 3.0-dev - (c) BlueDynamics Alliance, http://bluedynamics.com, GPL 2\nINFO  Generator ... sec.\n'
 
-
-Check for the existence of generated files and directories:
+Check for the existence of generated files and directories::
 
     >>> testpackage_path = os.path.join(datadir, 'agx.testpackage')
     >>> os.path.exists(os.path.join(testpackage_path, 'setup.py'))
@@ -113,17 +107,14 @@ Check for the existence of generated files and directories:
     >>> os.path.exists(os.path.join(testpackage_path, 'src', 'agx', 'testpackage', 'somepackage', 'packageclass.py'))
     True
 
-
-Check if we can delete something that has been generated...
-
+Check if we can delete something that has been generated...::
 
     >>> if os.path.exists(os.path.join(datadir, 'agx.testpackage')):
     ...     shutil.rmtree(os.path.join(datadir, 'agx.testpackage'))
     ...     print("deleted generated code")
     deleted generated code
 
-
-And that files were really deleted.
+And that files were really deleted::
 
     >>> os.path.exists(os.path.join(testpackage_path, 'setup.py'))
     False

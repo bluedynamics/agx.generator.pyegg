@@ -1,11 +1,16 @@
 {% for cpline in cp %}# {{cpline}}
 {% endfor %}
-from setuptools import setup, find_packages
-import sys, os
+import os
+from setuptools import (
+    setup,
+    find_packages,
+)
+
 
 version = "{{version}}"
 shortdesc = "{{description}}"
 longdesc = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
+
 
 setup(name="{{project}}",
       version=version,

@@ -1,18 +1,15 @@
 Test agx.generator.pyegg
 ========================
 
-Setup configuration and emulate main routine.
-::
+Setup configuration and emulate main routine::
 
     >>> from zope.configuration.xmlconfig import XMLConfig
-    >>> import agx.generator.pyegg.tests
-    >>> XMLConfig('configure.zcml', agx.generator.pyegg.tests)()
-    
+
     >>> import agx.core
     >>> XMLConfig('configure.zcml', agx.core)()
-    
+
     >>> from agx.core.main import parse_options
-    
+
     >>> import os
     >>> modelpath = os.path.join(datadir, 'agx.testpackage.uml')
     >>> profilepath = os.path.join(datadir, '..', '..',
@@ -23,7 +20,7 @@ Setup configuration and emulate main routine.
     >>> target = controller(modelpaths, outdir)
     >>> target
     <Directory object '/.../agx.generator.pyegg/src/agx/generator/pyegg/tests/data/agx.testpackage' at ...>
-    
+
     >> target.printtree()
     <class 'node.ext.directory.directory.Directory'>: .../agx.testpackage
       <class 'node.ext.directory.directory.Directory'>: src
