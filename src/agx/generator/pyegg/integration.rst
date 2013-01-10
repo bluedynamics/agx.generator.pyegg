@@ -6,7 +6,7 @@ agx.dev setup after running buildout. Steps performed:
 
 - delete generated code, if any
 - get & check the generators help output
-- generate code from test model in tests/data/agx.testpackage.uml
+- generate code from test model in testing/data/agx.testpackage.uml
 - check for generated files & directories (if they exist as expected)
 - delete the generated files again & check for non-existence
 
@@ -33,20 +33,20 @@ Some configuration settings for what is to come::
     ...    os.path.join(datadir, '..', '..', '..', '..', '..', '..', '..', '..')) + os.sep
     >>> agx_bin = os.path.join(base_path, 'bin', 'agx')
     >>> pyegg_path = os.path.join('devsrc', 'agx.generator.pyegg', 'src', 'agx', 'generator', 'pyegg')
-    >>> model_uml = os.path.join(base_path, pyegg_path, 'tests', 'data', 'agx.testpackage.uml')
+    >>> model_uml = os.path.join(base_path, pyegg_path, 'testing', 'data', 'agx.testpackage.uml')
     >>> pp = os.path.join(pyegg_path, 'profiles', 'pyegg.profile.uml')
     >>> profiles = base_path + pp
     >>> profiles
     '...devsrc/agx.generator.pyegg/src/agx/generator/pyegg/profiles/pyegg.profile.uml'
     >>> output_dir = os.path.join(datadir, 'agx.testpackage')
     >>> output_dir
-    '...devsrc/agx.generator.pyegg/src/agx/generator/pyegg/tests/data/agx.testpackage'
+    '...devsrc/agx.generator.pyegg/src/agx/generator/pyegg/testing/data/agx.testpackage'
 
     >>> agx_bin
     '...bin/agx'
 
     >>> model_uml
-    '...devsrc/agx.generator.pyegg/src/agx/generator/pyegg/tests/data/agx.testpackage.uml'
+    '...devsrc/agx.generator.pyegg/src/agx/generator/pyegg/testing/data/agx.testpackage.uml'
 
     >>> profiles
     '...agx.dev/devsrc/agx.generator.pyegg/src/agx/generator/pyegg/profiles/pyegg.profile.uml'

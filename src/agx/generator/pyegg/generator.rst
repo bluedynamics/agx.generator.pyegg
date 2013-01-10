@@ -19,7 +19,7 @@ Setup configuration and emulate main routine::
     >>> controller = agx.core.Controller()
     >>> target = controller(modelpaths, outdir)
     >>> target
-    <Directory object '/.../agx.generator.pyegg/src/agx/generator/pyegg/tests/data/agx.testpackage' at ...>
+    <Directory object '/.../agx.generator.pyegg/src/agx/generator/pyegg/testing/data/agx.testpackage' at ...>
 
     >> target.printtree()
     <class 'node.ext.directory.directory.Directory'>: .../agx.testpackage
