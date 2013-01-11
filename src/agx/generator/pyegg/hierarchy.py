@@ -29,6 +29,8 @@ def eggdocuments(self, source, target):
     """Create egg ``setup.py`` and default documents.
     """
     root = target.anchor
+    
+    #setup.py
     root.factories['setup.py'] = JinjaTemplate
     
     tgv = TaggedValues(source)
@@ -69,6 +71,10 @@ def eggdocuments(self, source, target):
         setup = JinjaTemplate()
         root['setup.py'] = setup
     
+    #read entry_points from token, so that other generators have the chance
+    #to define entry_points
+    entry_points_tok=token('entry_points', True, defs=[])
+    
     setup.template = templatepath('setup.py.jinja')
     setup.params = {'cp': cp,
                     'version': version,
@@ -82,8 +88,10 @@ def eggdocuments(self, source, target):
                     'license_name': license_name,
                     'namespace_packages': namespace_packages,
                     'zip_safe': zip_safe,
-                    'setup_dependencies': list()}
+                    'setup_dependencies': list(),
+                    'entry_points':'\n'.join(entry_points_tok.defs)}
     
+    #README.rst
     if 'README.rst' in root:
         readme = root['README.rst']
     else:
@@ -93,6 +101,7 @@ def eggdocuments(self, source, target):
     readme.template = templatepath('README.rst.jinja')
     readme.params = setup.params
     
+    #MANIFEST.rst
     if 'MANIFEST.in' in root:
         manifest = root['MANIFEST.in']
     else:
@@ -102,6 +111,7 @@ def eggdocuments(self, source, target):
     manifest.template = templatepath('MANIFEST.in.jinja')
     manifest.params = {}
     
+    #LICENSE.rst
     if 'LICENSE.rst' in root:
         license = root['LICENSE.rst']
     else:
