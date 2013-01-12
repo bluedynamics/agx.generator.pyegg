@@ -545,5 +545,11 @@
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TqfNsBRSEeKcC97Hb5tvFQ" id="(0.45,0.02)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TqfNsRRSEeKcC97Hb5tvFQ" id="(0.2185430463576159,0.66)"/>
     </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_o6DHIFydEeKx8cgmcB0BHg" type="1013" source="_SFatUBRSEeKcC97Hb5tvFQ" target="_VwRhoKfhEeCYbMocf1hIjA" lineColor="0">
+      <styles xmi:type="notation:FontStyle" xmi:id="_o6DHIVydEeKx8cgmcB0BHg" fontName="Ubuntu"/>
+      <element xmi:type="uml:Extension" href="pyegg.profile.uml#_o59AgFydEeKx8cgmcB0BHg"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_o6DHIlydEeKx8cgmcB0BHg" points="[-50, -24, 206, 96]$[-174, -123, 82, -3]"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_o6J00FydEeKx8cgmcB0BHg" id="(0.8161434977578476,0.4)"/>
+    </edges>
   </notation:Diagram>
 </xmi:XMI>

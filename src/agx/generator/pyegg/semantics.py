@@ -21,7 +21,7 @@ from agx.generator.pyegg.utils import (
 )
 
 from node.ext.python.utils import Imports
-from node.ext.python.interfaces import IFunction
+from node.ext.python.interfaces import IFunction,IClass,IModule
 from node.ext.template.interfaces import ITemplate
 
 @handler('inheritanceorder', 'uml2fs', 'semanticsgenerator',
@@ -109,9 +109,11 @@ def apiexporter(self, source,target):
 def autoimport(self, source,target):
     '''takes classes with 'api' stereotype and imports them into 
     the pyegg's __init__.py'''
-
     targetob=read_target_node(source,target.target)
-    init=targetob.parent.parent['__init__.py']
+    if IModule.providedBy(targetob) or IDirectory.providedBy(targetob):
+        init=targetob.parent['__init__.py']
+    else:
+        init=targetob.parent.parent['__init__.py']
     imps=Imports(init)
     imps.set(None,[[source.name,None]])
 
