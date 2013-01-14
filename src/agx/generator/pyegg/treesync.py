@@ -1,9 +1,6 @@
-# Copyright BlueDynamics Alliance - http://bluedynamics.com
-# GNU General Public License Version 2
-
 from zope.interface import (
     Interface,
-    implements,
+    implementer,
 )
 from agx.core import TreeSyncPreperator
 from agx.core.util import read_target_node
@@ -17,24 +14,24 @@ from node.ext.python import Module
 
 
 class IModuleNameChooser(Interface):
-    
+
     def __call__():
         """Create real module name
         """
 
 
+@implementer(IModuleNameChooser)
 class ModuleNameChooser(object):
-    implements(IModuleNameChooser)
-    
+
     def __init__(self, context):
         self.context = context
-    
+
     def __call__(self):
         return self.context.name.lower()
 
 
 class PackageSyncer(TreeSyncPreperator):
-    
+
     def __call__(self, source):
         super(PackageSyncer, self).__call__(source)
         if (IClass.providedBy(source) or IInterface.providedBy(source)) \

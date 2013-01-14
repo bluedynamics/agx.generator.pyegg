@@ -30,94 +30,96 @@ def eggdocuments(self, source, target):
     """
     root = target.anchor
     
-    #setup.py
+    # setup.py
     root.factories['setup.py'] = JinjaTemplate
-    
+
     tgv = TaggedValues(source)
     version = tgv.direct('version', 'pyegg:pyegg', '1.0')
     project = source.name
-    
+
     cp = tgv.direct('copyright', 'pyegg:pyegg', '')
     cp = cp.split(',')
     cp = [line.strip() for line in cp]
-    
+
     description = tgv.direct('description', 'pyegg:pyegg', '')
-    
+
     classifiers = tgv.direct('classifiers', 'pyegg:pyegg', '')
     classifiers = classifiers.split(',')
     classifiers = [cla.strip() for cla in classifiers]
-    
+
     keywords = tgv.direct('keywords', 'pyegg:pyegg', '')
-    
+
     author = tgv.direct('author', 'pyegg:pyegg', '')
     author_email = tgv.direct('email', 'pyegg:pyegg', '')
-    
+
     url = tgv.direct('url', 'pyegg:pyegg', '')
-    
+
     license_name = tgv.direct('license', 'pyegg:pyegg', '')
-    
+
     namespace = project.split('.')
     namespace_packages = list()
     if len(namespace) > 1:
         for i in range(len(namespace) - 1):
             namespace_packages.append('"%s"' % '.'.join(namespace[:i + 1]))
     namespace_packages = ', '.join(namespace_packages)
-    
+
     zip_safe = tgv.direct('zipsafe', 'pyegg:pyegg', 'False')
-    
+
     if 'setup.py' in root:
         setup = root['setup.py']
     else:
         setup = JinjaTemplate()
         root['setup.py'] = setup
-    
-    #read entry_points from token, so that other generators have the chance
-    #to define entry_points
+
+    # read entry_points from token, so that other generators have the chance
+    # to define entry_points
     entry_points_tok=token('entry_points', True, defs=[])
-    
+
     setup.template = templatepath('setup.py.jinja')
-    setup.params = {'cp': cp,
-                    'version': version,
-                    'project': project,
-                    'description': description,
-                    'classifiers': classifiers,
-                    'keywords': keywords,
-                    'author': author,
-                    'author_email': author_email,
-                    'url': url,
-                    'license_name': license_name,
-                    'namespace_packages': namespace_packages,
-                    'zip_safe': zip_safe,
-                    'setup_dependencies': list(),
-                    'entry_points':'\n'.join(entry_points_tok.defs)}
-    
-    #README.rst
+    setup.params = {
+        'cp': cp,
+        'version': version,
+        'project': project,
+        'description': description,
+        'classifiers': classifiers,
+        'keywords': keywords,
+        'author': author,
+        'author_email': author_email,
+        'url': url,
+        'license_name': license_name,
+        'namespace_packages': namespace_packages,
+        'zip_safe': zip_safe,
+        'setup_dependencies': list(),
+        'entry_points':'\n'.join(entry_points_tok.defs),
+    }
+
+    # README.rst
     if 'README.rst' in root:
         readme = root['README.rst']
     else:
         readme = JinjaTemplate()
         root['README.rst'] = readme
-    
+
     readme.template = templatepath('README.rst.jinja')
     readme.params = setup.params
-    
-    #MANIFEST.rst
+
+    # MANIFEST.rst
     if 'MANIFEST.in' in root:
         manifest = root['MANIFEST.in']
     else:
         manifest = JinjaTemplate()
         root['MANIFEST.rst'] = manifest
-    
+
     manifest.template = templatepath('MANIFEST.in.jinja')
     manifest.params = {}
-    
-    #LICENSE.rst
+
+    # LICENSE.rst
     if 'LICENSE.rst' in root:
         license = root['LICENSE.rst']
     else:
         license = JinjaTemplate()
         root['LICENSE.rst'] = license
-    
+
     license.template = templatepath('LICENSE.rst.jinja')
     license.params = {}
 
@@ -129,7 +131,7 @@ def eggdirectories(self, source, target):
     """
     if not 'src' in target.anchor:
         target.anchor['src'] = Directory()
-    
+
     package = target.anchor['src']
     names = source.name.split('.')    
     for i in range(len(names)):
@@ -146,8 +148,8 @@ def eggdirectories(self, source, target):
                 module['ns_dec'] = block
         else:
             set_copyright(source, module)
-    
-    #store all pyeggs in a token
+
+    # store all pyeggs in a token
     eggtok = token('pyeggs', True, packages=set(), directories=set())
     eggtok.packages.add(source)
     eggtok.directories.add(package)
@@ -178,7 +180,7 @@ def pymodule(self, source, target):
     container = target.anchor
     container['%s.py' % source.name] = module
     set_copyright(source, module)
-    #store all pymodules in a token
+    # store all pymodules in a token
     modtok = token('pymodules', True, modules=set())
     modtok.modules.add(module)
     target.finalize(source, module)
@@ -196,16 +198,16 @@ def pyclass(self, source, target):
     handled_classes=[str(uuid) for uuid in custom_handled.classes]
     if str(source.uuid) in handled_classes:
         return
-    
+
     name = source.name
     module = target.anchor
     try:
         set_copyright(source, module)
     except AttributeError:
-        raise ValueError, \
-            'Package "%s" must have either <<pymodule>> or <<pypackage>> stereotype'\
-             % dotted_path(module)
-        
+        msg = 'Package "%s" must have either <<pymodule>> or ' + \
+              '<<pypackage>> stereotype'
+        msg = msg % dotted_path(module)
+        raise ValueError(msg)
     if module.classes(name):
         class_ = module.classes(name)[0]
         target.finalize(source, class_)
@@ -216,7 +218,7 @@ def pyclass(self, source, target):
       and not source.parent.stereotype('pyegg:pymodule'):
         imp = Imports(module.parent['__init__.py'])
         imp.set(class_base_name(class_), [[class_.classname, None]])
-        
+
     target.finalize(source, class_)
 
 

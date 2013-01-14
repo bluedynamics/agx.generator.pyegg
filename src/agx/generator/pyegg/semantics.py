@@ -1,6 +1,3 @@
-# Copyright BlueDynamics Alliance - http://bluedynamics.com
-# GNU General Public License Version 2
-
 from zope.component import getUtility
 from zope.component.interfaces import ComponentLookupError
 from agx.core import (
@@ -19,10 +16,14 @@ from agx.generator.pyegg.utils import (
     class_full_name,
     implicit_dotted_path,
 )
-
 from node.ext.python.utils import Imports
-from node.ext.python.interfaces import IFunction,IClass,IModule
+from node.ext.python.interfaces import (
+    IFunction,
+    IClass,
+    IModule,
+)
 from node.ext.template.interfaces import ITemplate
+
 
 @handler('inheritanceorder', 'uml2fs', 'semanticsgenerator',
          'pyclass', order=10)
@@ -71,7 +72,8 @@ def emptymoduleremoval(self, source, target):
     for name in directory.keys():
         module = directory[name]
         if not module.name.endswith('.py'):
-            continue #XXX thats perhaps not the perfect solution to sk
+            # XXX: thats perhaps not the perfect solution to sk
+            continue
         if IDirectory.providedBy(module) \
           or module.name == '__init__.py' \
           or module in ignores:
@@ -84,36 +86,34 @@ def emptymoduleremoval(self, source, target):
                continue 
             if bl.lines != as_comment(get_copyright(source)):
                 continue
-        
-        #dont throw away templates
+        # dont throw away templates
         if ITemplate.providedBy(module) and module.template:
             continue
-        
         del module.parent[module.name]
-        
-@handler('apiexporter', 'uml2fs', 'semanticsgenerator',
-         'api' )
-def apiexporter(self, source,target):
-    '''takes classes with 'api' stereotype and imports them into 
-    the pyegg's __init__.py'''
-    
-    egg=egg_source(source)
-    targetegg=read_target_node(egg, target.target)
-    init=targetegg['__init__.py']
-    imps=Imports(init)
-    klass=read_target_node(source, target.target)
-    imps.set(class_base_name(klass),[[source.name,None]])
-    
-@handler('autoimport', 'uml2fs', 'semanticsgenerator',
-         'autoimport' )
-def autoimport(self, source,target):
-    '''takes classes with 'api' stereotype and imports them into 
-    the pyegg's __init__.py'''
-    targetob=read_target_node(source,target.target)
-    if IModule.providedBy(targetob) or IDirectory.providedBy(targetob):
-        init=targetob.parent['__init__.py']
-    else:
-        init=targetob.parent.parent['__init__.py']
-    imps=Imports(init)
-    imps.set(None,[[source.name,None]])
 
+
+@handler('apiexporter', 'uml2fs', 'semanticsgenerator', 'api')
+def apiexporter(self, source,target):
+    """Takes classes with 'api' stereotype and imports them into 
+    the pyegg's __init__.py.
+    """
+    egg = egg_source(source)
+    targetegg = read_target_node(egg, target.target)
+    init = targetegg['__init__.py']
+    imps = Imports(init)
+    klass = read_target_node(source, target.target)
+    imps.set(class_base_name(klass), [[source.name, None]])
+
+
+@handler('autoimport', 'uml2fs', 'semanticsgenerator', 'autoimport')
+def autoimport(self, source,target):
+    """Takes classes with 'api' stereotype and imports them into 
+    the pyegg's __init__.py.
+    """
+    targetob = read_target_node(source, target.target)
+    if IModule.providedBy(targetob) or IDirectory.providedBy(targetob):
+        init = targetob.parent['__init__.py']
+    else:
+        init = targetob.parent.parent['__init__.py']
+    imps = Imports(init)
+    imps.set(None, [[source.name, None]])

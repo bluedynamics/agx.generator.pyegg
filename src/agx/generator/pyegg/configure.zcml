@@ -6,41 +6,34 @@
   
   <adapter
     for="node.ext.uml.interfaces.IInterface"
-    factory="agx.generator.pyegg.treesync.ModuleNameChooser"
-  />
+    factory="agx.generator.pyegg.treesync.ModuleNameChooser" />
   
   <adapter
     for="node.ext.uml.interfaces.IClass"
-    factory="agx.generator.pyegg.treesync.ModuleNameChooser"
-  />
+    factory="agx.generator.pyegg.treesync.ModuleNameChooser" />
   
   <utility
     name="agx.generator.pyegg.profilelocation"
 	provides="agx.core.interfaces.IProfileLocation"
-	component=".profiles.ProfileLocation"
-  />
+	component=".profiles.ProfileLocation" />
   
   <agx:generator
     name="hierarchygenerator"
     transform="uml2fs"
     depends="NO"
 	targethandler="agx.generator.pyegg.treesync.PackageSyncer"
-	description="Generator for building hierarchical structure."
-  />
+	description="Generator for building hierarchical structure." />
   
   <agx:generator
     name="connectorgenerator"
     transform="uml2fs"
     depends="hierarchygenerator"
-	description="Generator for connecting elements, such as generalizations."
-  />
+	description="Generator for connecting elements, such as generalizations." />
   
   <agx:generator
     name="semanticsgenerator"
     transform="uml2fs"
     depends="connectorgenerator"
-	description="Generator for code sematics."
-  />
+	description="Generator for code sematics." />
 
-  />
 </configure>
