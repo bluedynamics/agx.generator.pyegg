@@ -6,4 +6,4 @@ files=model.di;\
     model.uml.agx;\
 
 title=Python Egg
-description=Minimal Python egg model
+description=A minimal Python egg model.
