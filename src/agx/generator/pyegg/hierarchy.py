@@ -94,34 +94,25 @@ def eggdocuments(self, source, target):
     }
 
     # README.rst
-    if 'README.rst' in root:
-        readme = root['README.rst']
-    else:
+    if 'README.rst' not in root:
         readme = JinjaTemplate()
         root['README.rst'] = readme
-
-    readme.template = templatepath('README.rst.jinja')
-    readme.params = setup.params
+        readme.template = templatepath('README.rst.jinja')
+        readme.params = setup.params
 
     # MANIFEST.rst
-    if 'MANIFEST.in' in root:
-        manifest = root['MANIFEST.in']
-    else:
+    if 'MANIFEST.in' not in root:
         manifest = JinjaTemplate()
         root['MANIFEST.rst'] = manifest
-
-    manifest.template = templatepath('MANIFEST.in.jinja')
-    manifest.params = {}
+        manifest.template = templatepath('MANIFEST.in.jinja')
+        manifest.params = {}
 
     # LICENSE.rst
-    if 'LICENSE.rst' in root:
-        license = root['LICENSE.rst']
-    else:
+    if 'LICENSE.rst' not in root:
         license = JinjaTemplate()
         root['LICENSE.rst'] = license
-
-    license.template = templatepath('LICENSE.rst.jinja')
-    license.params = {}
+        license.template = templatepath('LICENSE.rst.jinja')
+        license.params = {}
 
 
 @handler('eggdirectories', 'uml2fs', 'hierarchygenerator',
