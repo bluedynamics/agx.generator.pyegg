@@ -23,7 +23,7 @@ from agx.generator.pyegg.utils import (
 )
 
 
-@handler('eggdocuments', 'uml2fs', 'hierarchygenerator',
+@handler('eggdocuments', 'uml2fs', 'semanticsgenerator',
          'pythonegg', order=10)
 def eggdocuments(self, source, target):
     """Create egg ``setup.py`` and default documents.
@@ -74,7 +74,8 @@ def eggdocuments(self, source, target):
     # read entry_points from token, so that other generators have the chance
     # to define entry_points
     entry_points_tok=token('entry_points', True, defs=[])
-
+    setup_dependencies=token('setup_dependencies',True,deps=[])
+    
     setup.template = templatepath('setup.py.jinja')
     setup.params = {
         'cp': cp,

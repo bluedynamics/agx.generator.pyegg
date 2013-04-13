@@ -70,7 +70,13 @@ def emptymoduleremoval(self, source, target):
         # no modules created with <<pymodule>> packages
         ignores = set()
     for name in directory.keys():
-        module = directory[name]
+        try:
+            module = directory[name]
+        except TypeError:
+            #happens if the factory cannot be called without args (e.g. .pt)
+            #in this case its no python file and doesnt have to be removed
+            continue
+        
         if not module.name.endswith('.py'):
             # XXX: thats perhaps not the perfect solution to sk
             continue
