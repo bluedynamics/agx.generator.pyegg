@@ -200,7 +200,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RAMTTafgEeCYbMocf1hIjA"/>
       </children>
       <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_sOrecId1Ed-UV472qNy5NA"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RALsMafgEeCYbMocf1hIjA" x="995" y="255" width="161" height="131"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RALsMafgEeCYbMocf1hIjA" x="1024" y="256" width="136" height="129"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_SNiQIKfgEeCYbMocf1hIjA" type="1026" fontName="Ubuntu" fontHeight="12" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SNiQIqfgEeCYbMocf1hIjA" source="ShadowFigure">
@@ -416,7 +416,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mIALUO_xEeCvpoSe_joWQA"/>
       </children>
       <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_mH9vAO_xEeCvpoSe_joWQA"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mH_kMe_xEeCvpoSe_joWQA" x="830" y="255" width="151" height="116"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mH_kMe_xEeCvpoSe_joWQA" x="888" y="256" width="117" height="117"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_dTTKcOwjEeGAlMENIKRJsg" type="1026" fontName="Ubuntu" fontHeight="11" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dTTKcuwjEeGAlMENIKRJsg" source="ShadowFigure">
@@ -442,7 +442,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dTTxj-wjEeGAlMENIKRJsg"/>
       </children>
       <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_dTPgEOwjEeGAlMENIKRJsg"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dTTKcewjEeGAlMENIKRJsg" x="705" y="255" width="111" height="106"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dTTKcewjEeGAlMENIKRJsg" x="672" y="256" width="65" height="105"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_SFatUBRSEeKcC97Hb5tvFQ" type="1026" fontName="Ubuntu" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SFatUhRSEeKcC97Hb5tvFQ" source="ShadowFigure">
@@ -472,7 +472,34 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SFb7ehRSEeKcC97Hb5tvFQ"/>
       </children>
       <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_SFIZcBRSEeKcC97Hb5tvFQ"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SFatURRSEeKcC97Hb5tvFQ" x="580" y="255" width="111" height="106"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SFatURRSEeKcC97Hb5tvFQ" x="580" y="255" width="85" height="106"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Za1_0LTREeKIWeXRLG4HSw" type="1026">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Za2m4LTREeKIWeXRLG4HSw" type="1034"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_Za2m4bTREeKIWeXRLG4HSw" type="1071">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Za2m67TREeKIWeXRLG4HSw" source="PapyrusCSSForceValue">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Za2m7LTREeKIWeXRLG4HSw" key="showTitle" value="true"/>
+        </eAnnotations>
+        <children xmi:type="notation:Shape" xmi:id="_f4KBgLTREeKIWeXRLG4HSw" type="3002">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_f4G-MLTREeKIWeXRLG4HSw"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_f4KBgbTREeKIWeXRLG4HSw"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_Za2m4rTREeKIWeXRLG4HSw"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_Za2m47TREeKIWeXRLG4HSw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_Za2m5LTREeKIWeXRLG4HSw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Za2m5bTREeKIWeXRLG4HSw"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_Za2m5rTREeKIWeXRLG4HSw" visible="false" type="1019">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Za3N8LTREeKIWeXRLG4HSw" source="PapyrusCSSForceValue">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Za3N8bTREeKIWeXRLG4HSw" key="showTitle" value="true"/>
+        </eAnnotations>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_Za2m57TREeKIWeXRLG4HSw"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_Za2m6LTREeKIWeXRLG4HSw"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_Za2m6bTREeKIWeXRLG4HSw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Za2m6rTREeKIWeXRLG4HSw"/>
+      </children>
+      <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_ZaxHULTREeKIWeXRLG4HSw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Za1_0bTREeKIWeXRLG4HSw" x="748" y="256" width="125" height="113"/>
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_5RzyYaffEeCYbMocf1hIjA"/>
     <element xmi:type="uml:Profile" href="pyegg.profile.uml#_HHBJsNqqEd6cif0axL0c4w"/>
@@ -565,6 +592,12 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_o6DHIlydEeKx8cgmcB0BHg" points="[8, -3, 258, 56]$[8, -22, 258, 37]$[-250, -22, 0, 37]$[-250, -43, 0, 16]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ZB6AEHtlEeKvC-Xbutnx2A" id="(0.36936936936936937,0.02830188679245283)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_o6J00FydEeKx8cgmcB0BHg" id="(0.9116161616161617,0.68)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_dAiUILTREeKIWeXRLG4HSw" type="1013" source="_Za1_0LTREeKIWeXRLG4HSw" target="_VwTW0KfhEeCYbMocf1hIjA">
+      <styles xmi:type="notation:FontStyle" xmi:id="_dAiUIbTREeKIWeXRLG4HSw"/>
+      <element xmi:type="uml:Extension" href="pyegg.profile.uml#_dAdbobTREeKIWeXRLG4HSw"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_dAiUIrTREeKIWeXRLG4HSw" points="[-3, -16, 8, 66]$[-3, -57, 8, 25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dAkJULTREeKIWeXRLG4HSw" id="(0.43,0.1523809523809524)"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>

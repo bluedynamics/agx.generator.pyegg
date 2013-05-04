@@ -70,6 +70,14 @@ class AutoimportScope(PackageScope):
             return False
         return True
 
+class ConsoleScriptScope(Scope):
+
+    def __call__(self, node):
+        return node.stereotype('pyegg:console_script') is not None
+
+
+registerScope('console_script', 'uml2fs', None , ConsoleScriptScope)
+
 
 registerScope('pythonegg', 'uml2fs', None, EggScope)
 registerScope('pypackage', 'uml2fs', None, PackageScope)

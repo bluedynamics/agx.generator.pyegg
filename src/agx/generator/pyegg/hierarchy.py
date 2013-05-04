@@ -22,9 +22,39 @@ from agx.generator.pyegg.utils import (
     is_class_a_function,
 )
 
+@handler('console_entry_points_collect', 'uml2fs', 'connectorgenerator', 'console_script',
+         order=10)
+def console_scripts_collect(self, source, target):
+    #collect information to define console_script entry points
+    tok = token('console_scripts', True, defs={})
+    tgv = TaggedValues(source)
+    name = tgv.direct('script_name', 'pyegg:console_script', source.name)
+    tgt = read_target_node(source, target.target)
+    module=tgt.parent
+    if source.stereotype('pyegg:function'):
+        path=class_base_name(tgt.parent)
+    else:
+        path=class_base_name(tgt)
+    tok.defs[name]='%s:%s' % (path,source.name)
+        
+
+@handler('console_entry_points', 'uml2fs', 'semanticsgenerator', 'pythonegg',
+         order=10)
+def console_entry_points(self, source, target):
+    tok = token('console_scripts', True, defs={})
+    if tok.defs:
+        stmt= """[console_scripts]\n"""
+    
+        lines=[]
+        for key in tok.defs:
+            lines.append("        %s=%s" % (key, tok.defs[key]))
+            
+        ep_tok=token('entry_points', True, defs=[])
+        ep_tok.defs.append(stmt+'\n'.join(lines)+'\n')
+        
 
 @handler('eggdocuments', 'uml2fs', 'semanticsgenerator',
-         'pythonegg', order=10)
+         'pythonegg', order=11)
 def eggdocuments(self, source, target):
     """Create egg ``setup.py`` and default documents.
     """
@@ -73,8 +103,8 @@ def eggdocuments(self, source, target):
 
     # read entry_points from token, so that other generators have the chance
     # to define entry_points
-    entry_points_tok=token('entry_points', True, defs=[])
-    setup_dependencies=token('setup_dependencies',True,deps=[])
+    entry_points_tok = token('entry_points', True, defs=[])
+    setup_dependencies = token('setup_dependencies', True, deps=[])
     
     setup.template = templatepath('setup.py.jinja')
     setup.params = {
@@ -187,7 +217,7 @@ def pyclass(self, source, target):
     # skip class generation if previous custom handler mark this class as
     # already handled
     custom_handled = token('custom_handled_classes', True, classes=list())
-    handled_classes=[str(uuid) for uuid in custom_handled.classes]
+    handled_classes = [str(uuid) for uuid in custom_handled.classes]
     if str(source.uuid) in handled_classes:
         return
 
@@ -244,9 +274,9 @@ def pydecorator(self, source, target):
     """Create Decorator.
     """
     tgv = TaggedValues(source)
-    name = tgv.direct('name', 'pyegg:decorator',None)
+    name = tgv.direct('name', 'pyegg:decorator', None)
     if not name:
-        raise ValueError,'decorator for %s must have a TaggedValue "name"'%\
+        raise ValueError, 'decorator for %s must have a TaggedValue "name"' % \
             dotted_path(source)
     args = tgv.direct('args', 'pyegg:decorator', None)
     kwargs = tgv.direct('kwargs', 'pyegg:decorator', None)
