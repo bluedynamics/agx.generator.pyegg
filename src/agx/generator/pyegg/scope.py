@@ -78,6 +78,14 @@ class ConsoleScriptScope(Scope):
 
 registerScope('console_script', 'uml2fs', None , ConsoleScriptScope)
 
+class SimpleBuildoutScope(Scope):
+
+    def __call__(self, node):
+        return node.stereotype('pyegg:simple_buildout') is not None
+
+
+registerScope('simple_buildout', 'uml2fs', None , SimpleBuildoutScope)
+
 
 registerScope('pythonegg', 'uml2fs', None, EggScope)
 registerScope('pypackage', 'uml2fs', None, PackageScope)

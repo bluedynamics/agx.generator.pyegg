@@ -21,6 +21,7 @@ from agx.generator.pyegg.utils import (
     set_copyright,
     is_class_a_function,
 )
+from node.ext.python.interfaces import IModule
 
 @handler('console_entry_points_collect', 'uml2fs', 'connectorgenerator', 'console_script',
          order=10)
@@ -30,8 +31,9 @@ def console_scripts_collect(self, source, target):
     tgv = TaggedValues(source)
     name = tgv.direct('script_name', 'pyegg:console_script', source.name)
     tgt = read_target_node(source, target.target)
-    module=tgt.parent
-    if source.stereotype('pyegg:function'):
+    
+#    import pdb;pdb.set_trace()
+    if source.stereotype('pyegg:function') and not source.parent.stereotype('pyegg:pymodule'):
         path=class_base_name(tgt.parent)
     else:
         path=class_base_name(tgt)
@@ -313,3 +315,22 @@ def pyattribute(self, source, target):
     attribute = python.Attribute([name], value=value)
     container[str(attribute.uuid)] = attribute
     target.finalize(source, attribute)
+    
+@handler('generate_simple_pyegg_buildout', 'uml2fs', 'hierarchygenerator', 'simple_buildout',
+         order=11)
+def generate_simple_pyegg_buildout(self, source, target):
+    egg = target.anchor
+    
+    egg.factories['buildout.cfg'] = JinjaTemplate
+    egg.factories['bootstrap.py'] = JinjaTemplate
+    
+    if 'buildout.cfg' not in egg.keys():
+        egg['buildout.cfg']=JinjaTemplate()
+        egg['buildout.cfg'].template= templatepath('buildout.cfg.jinja')
+        egg['buildout.cfg'].params={'package':source.name}
+        
+    if 'bootstrap.py' not in egg.keys():
+        egg['bootstrap.py']=JinjaTemplate()
+        egg['bootstrap.py'].template= templatepath('bootstrap.py.jinja')
+        egg['bootstrap.py'].params={}
+

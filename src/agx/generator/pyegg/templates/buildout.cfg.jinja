@@ -1,0 +1,21 @@
+[buildout]
+
+develop = .
+extensions =
+    buildout.threatlevel
+
+eggs-directory = eggs
+#activate this if you want to use a cache dir, you will have to create the dir
+#download-cache = ${buildout:directory}/downloads
+
+parts =
+    mypackage
+
+
+[mypackage]
+recipe = zc.recipe.egg
+dependent-scripts = true
+eggs =
+    {{package}}
+
+interpreter = py
