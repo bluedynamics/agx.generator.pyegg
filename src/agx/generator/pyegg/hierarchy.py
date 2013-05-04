@@ -32,11 +32,11 @@ def console_scripts_collect(self, source, target):
     name = tgv.direct('script_name', 'pyegg:console_script', source.name)
     tgt = read_target_node(source, target.target)
     
-#    import pdb;pdb.set_trace()
     if source.stereotype('pyegg:function') and not source.parent.stereotype('pyegg:pymodule'):
         path=class_base_name(tgt.parent)
     else:
         path=class_base_name(tgt)
+        
     tok.defs[name]='%s:%s' % (path,source.name)
         
 
