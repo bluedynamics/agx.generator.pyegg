@@ -200,7 +200,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RAMTTafgEeCYbMocf1hIjA"/>
       </children>
       <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_sOrecId1Ed-UV472qNy5NA"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RALsMafgEeCYbMocf1hIjA" x="1024" y="256" width="136" height="129"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RALsMafgEeCYbMocf1hIjA" x="1040" y="256" width="136" height="129"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_SNiQIKfgEeCYbMocf1hIjA" type="1026" fontName="Ubuntu" fontHeight="12" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SNiQIqfgEeCYbMocf1hIjA" source="ShadowFigure">
@@ -228,7 +228,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SNi3O6fgEeCYbMocf1hIjA"/>
       </children>
       <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_J1wNwBMGEd-xr8iNT7ZQUQ"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SNiQIafgEeCYbMocf1hIjA" x="1170" y="255"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SNiQIafgEeCYbMocf1hIjA" x="1232" y="256"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_SoXyAKfgEeCYbMocf1hIjA" type="1026" fontName="Ubuntu" fontHeight="12" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SoXyAqfgEeCYbMocf1hIjA" source="ShadowFigure">
@@ -256,7 +256,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SoYZGqfgEeCYbMocf1hIjA"/>
       </children>
       <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_Oh_6gIdyEd-UV472qNy5NA"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SoXyAafgEeCYbMocf1hIjA" x="1320" y="255" width="191" height="146"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SoXyAafgEeCYbMocf1hIjA" x="1360" y="256" width="163" height="146"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_VwRhoKfhEeCYbMocf1hIjA" type="1031" fontName="Ubuntu" fontHeight="12" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_VwSIsKfhEeCYbMocf1hIjA" source="ShadowFigure">
@@ -404,6 +404,10 @@
           <element xmi:type="uml:Property" href="pyegg.profile.uml#_HZWlQO_0EeC7tul8mqamKw"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_HZa2se_0EeC7tul8mqamKw"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_7iUicOLnEeKRUtLfnAuowQ" type="3002">
+          <element xmi:type="uml:Property" href="pyegg.profile.uml#_7iRfIOLnEeKRUtLfnAuowQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_7iUiceLnEeKRUtLfnAuowQ"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_mIALSO_xEeCvpoSe_joWQA"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_mIALSe_xEeCvpoSe_joWQA"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_mIALSu_xEeCvpoSe_joWQA"/>
@@ -416,7 +420,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mIALUO_xEeCvpoSe_joWQA"/>
       </children>
       <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_mH9vAO_xEeCvpoSe_joWQA"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mH_kMe_xEeCvpoSe_joWQA" x="888" y="256" width="117" height="117"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mH_kMe_xEeCvpoSe_joWQA" x="868" y="256" width="109" height="117"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_dTTKcOwjEeGAlMENIKRJsg" type="1026" fontName="Ubuntu" fontHeight="11" lineColor="0">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dTTKcuwjEeGAlMENIKRJsg" source="ShadowFigure">
@@ -499,7 +503,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Za2m6rTREeKIWeXRLG4HSw"/>
       </children>
       <element xmi:type="uml:Stereotype" href="pyegg.profile.uml#_ZaxHULTREeKIWeXRLG4HSw"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Za1_0bTREeKIWeXRLG4HSw" x="748" y="256" width="125" height="113"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Za1_0bTREeKIWeXRLG4HSw" x="748" y="256" width="93" height="109"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_2_evILThEeKIWeXRLG4HSw" type="1026">
       <children xmi:type="notation:DecorationNode" xmi:id="_2_evIrThEeKIWeXRLG4HSw" type="1034"/>

@@ -22,22 +22,23 @@ from agx.generator.pyegg.utils import (
     is_class_a_function,
 )
 from node.ext.python.interfaces import IModule
+from node.ext.python.nodes import Block
 
 @handler('console_entry_points_collect', 'uml2fs', 'connectorgenerator', 'console_script',
          order=10)
 def console_scripts_collect(self, source, target):
-    #collect information to define console_script entry points
+    # collect information to define console_script entry points
     tok = token('console_scripts', True, defs={})
     tgv = TaggedValues(source)
     name = tgv.direct('script_name', 'pyegg:console_script', source.name)
     tgt = read_target_node(source, target.target)
     
     if source.stereotype('pyegg:function') and not source.parent.stereotype('pyegg:pymodule'):
-        path=class_base_name(tgt.parent)
+        path = class_base_name(tgt.parent)
     else:
-        path=class_base_name(tgt)
+        path = class_base_name(tgt)
         
-    tok.defs[name]='%s:%s' % (path,source.name)
+    tok.defs[name] = '%s:%s' % (path, source.name)
         
 
 @handler('console_entry_points', 'uml2fs', 'semanticsgenerator', 'pythonegg',
@@ -45,14 +46,14 @@ def console_scripts_collect(self, source, target):
 def console_entry_points(self, source, target):
     tok = token('console_scripts', True, defs={})
     if tok.defs:
-        stmt= """[console_scripts]\n"""
+        stmt = """[console_scripts]\n"""
     
-        lines=[]
+        lines = []
         for key in tok.defs:
             lines.append("        %s=%s" % (key, tok.defs[key]))
             
-        ep_tok=token('entry_points', True, defs=[])
-        ep_tok.defs.append(stmt+'\n'.join(lines)+'\n')
+        ep_tok = token('entry_points', True, defs=[])
+        ep_tok.defs.append(stmt + '\n'.join(lines) + '\n')
         
 
 @handler('eggdocuments', 'uml2fs', 'semanticsgenerator',
@@ -250,25 +251,31 @@ def pyclass(self, source, target):
 def pyfunction(self, source, target):
     """Create python functions.
     """
-    def set_args_kwargs(source, function):
+    def set_args_kwargs_code(source, function):
         tgv = TaggedValues(source)
         _args = tgv.direct('args', 'pyegg:function')
         _kwargs = tgv.direct('kwargs', 'pyegg:function')
+        _code = tgv.direct('code', 'pyegg:function')
         if _args is not UNSET:
             function.s_args = _args
         if _kwargs is not UNSET:
             function.s_kwargs = _kwargs
+        if _code is not UNSET:
+            if not function.blocks():
+                function.insertlast(Block(_code))
+            
     name = source.name
     container = target.anchor
     if container.functions(name):
         function = container.functions(name)[0]
-        set_args_kwargs(source, function)
+        set_args_kwargs_code(source, function)
         target.finalize(source, function)
         return
     function = python.Function(name)
     container[str(function.uuid)] = function
-    set_args_kwargs(source, function)
+    set_args_kwargs_code(source, function)
     target.finalize(source, function)
+    
 
 
 @handler('pydecorator', 'uml2fs', 'hierarchygenerator', 'pydecorator', order=40)
@@ -325,12 +332,12 @@ def generate_simple_pyegg_buildout(self, source, target):
     egg.factories['bootstrap.py'] = JinjaTemplate
     
     if 'buildout.cfg' not in egg.keys():
-        egg['buildout.cfg']=JinjaTemplate()
-        egg['buildout.cfg'].template= templatepath('buildout.cfg.jinja')
-        egg['buildout.cfg'].params={'package':source.name}
+        egg['buildout.cfg'] = JinjaTemplate()
+        egg['buildout.cfg'].template = templatepath('buildout.cfg.jinja')
+        egg['buildout.cfg'].params = {'package':source.name}
         
     if 'bootstrap.py' not in egg.keys():
-        egg['bootstrap.py']=JinjaTemplate()
-        egg['bootstrap.py'].template= templatepath('bootstrap.py.jinja')
-        egg['bootstrap.py'].params={}
+        egg['bootstrap.py'] = JinjaTemplate()
+        egg['bootstrap.py'].template = templatepath('bootstrap.py.jinja')
+        egg['bootstrap.py'].params = {}
 

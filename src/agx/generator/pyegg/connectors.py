@@ -18,6 +18,7 @@ from node.ext.uml.utils import (
 )
 from node.ext import python
 from node.ext.python.utils import Imports
+from node.ext.python.nodes import Block
 
 
 @handler('classgeneralization', 'uml2fs', 'connectorgenerator',
@@ -95,10 +96,15 @@ def pyfunctionfromclass(self, source, target):
     tgv = TaggedValues(source)
     _args = tgv.direct('args', 'pyegg:function')
     _kwargs = tgv.direct('kwargs', 'pyegg:function')
+    _code = tgv.direct('code', 'pyegg:function')
     if _args is not UNSET:
         function.s_args = _args
     if _kwargs is not UNSET:
         function.s_kwargs = _kwargs
+    if _code is not UNSET:
+        if not function.blocks():
+            function.insertlast(Block(_code))
+
     other_decorators = function.decorators()
     for dec in decorators:
         exists = 0
