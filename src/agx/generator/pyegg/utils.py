@@ -1,12 +1,17 @@
 import os
 import uuid
 from zope.component.interfaces import ComponentLookupError
+from node.ext.python.utils import Imports
 from node.ext import python
 from node.ext.uml.utils import (
     TaggedValues,
     UNSET,
 )
 from agx.core import token
+from node.ext.python.interfaces import (
+    IFunction,
+    IClass,
+    )
 
 
 def templatepath(name):
@@ -135,3 +140,24 @@ def is_class_a_function(klass):
             return True
     except ComponentLookupError:
         pass
+
+def import_if_necessary(module, node):
+    '''convenience method:
+    generates an import statement, if the node is not within the given
+    module'''
+    imps=Imports(module)
+    frompath=class_base_name(node)
+    
+    if IClass.providedBy(node): 
+        name=node.classname
+        if module.classes(name): 
+            return
+        
+    if IFunction.providedBy(node): 
+        name=node.functionname
+        if module.functions(name):
+            return
+    
+    imps.set(frompath, name)
+        
+        

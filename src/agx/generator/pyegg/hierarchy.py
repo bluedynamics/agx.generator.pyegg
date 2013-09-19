@@ -123,7 +123,7 @@ def eggdocuments(self, source, target):
         'license_name': license_name,
         'namespace_packages': namespace_packages,
         'zip_safe': zip_safe,
-        'setup_dependencies': list(),
+        'setup_dependencies': setup_dependencies.deps,
         'entry_points':'\n'.join(entry_points_tok.defs),
     }
 
@@ -186,6 +186,7 @@ def pypackage(self, source, target):
     """Create python packages.
     """
     if not len(target.anchor):
+        return
         raise Exception(u"Invalid egg structure. Is ``pyegg`` stereotype "
                         u"applied on root package in UML model?")
     if not source.name in target.anchor:
