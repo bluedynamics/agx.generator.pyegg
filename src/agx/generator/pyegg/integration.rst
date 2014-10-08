@@ -18,7 +18,7 @@ We would like to start with a fresh setup, no generated files. We delete them::
 
     >>> import os
     >>> import shutil
-    >>> 
+    >>>
     >>> #print(os.path.abspath(datadir))
     >>> if os.path.exists(os.path.join(datadir, 'agx.testpackage')):
     ...     shutil.rmtree(os.path.join(datadir, 'agx.testpackage'))
@@ -72,7 +72,7 @@ This time we generate some code::
     >>> out, err = subprocess.Popen([agx_bin, model_uml, '-p', profiles, '-o', output_dir], stdout=subprocess.PIPE).communicate()
     >>> err
     >>> out
-    "INFO  AGX 3.0-dev - (c) BlueDynamics Alliance, http://bluedynamics.com, GPL 2\nINFO  Generator ... sec.\n"
+    "INFO  AGX ... - (c) BlueDynamics Alliance, http://bluedynamics.com, GPL 2\nINFO  Generator ... sec.\n"
 
 Check for the existence of generated files and directories::
 
